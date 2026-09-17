@@ -182,25 +182,3 @@ before starting the application.
 
 ---
 
-# Future features
-
-Possible future improvements:
-
-- Video preview
-- Video thumbnails
-- Drag and drop
-- Multiple virtual cameras
-- Multiple video sources
-- Webcam input
-- Image input
-- Text overlays
-- Audio
-- Volume controls
-- Video seek bar
-- Pause
-- Fullscreen preview
-- OBS-style scenes
-- Scene switching
-- Multiple sources
-- Automatic scene switching
-- Hardware accelerated FFmpeg
