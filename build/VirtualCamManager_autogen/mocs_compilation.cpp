@@ -2,3 +2,4 @@
 #include "UVLADIE3JM/moc_FFmpegProcess.cpp"
 #include "UVLADIE3JM/moc_MainWindow.cpp"
 #include "UVLADIE3JM/moc_VideoManager.cpp"
+#include "UVLADIE3JM/moc_VirtualCameraManager.cpp"

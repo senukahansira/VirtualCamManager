@@ -2,28 +2,27 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QPushButton>
-#include <QScrollArea>
-#include <QVector>
-#include <QFrame>
 
-#include "VideoManager.h"
+class QLabel;
+class QPushButton;
+class QVBoxLayout;
+class QWidget;
+
+class VideoManager;
+class VirtualCameraManager;
 
 /*
  * MainWindow
  *
- * This is the main GUI window.
+ * This class controls the graphical user interface.
  *
- * It contains:
+ * It displays:
  *
+ * - Virtual camera status
+ * - Start/Stop Camera buttons
  * - Add Video button
  * - Video list
- * - Play buttons
- * - Stop buttons
- * - Remove buttons
- * - Status information
+ * - Play/Stop/Remove buttons
  */
 class MainWindow : public QMainWindow
 {
@@ -35,64 +34,76 @@ public:
 
 private slots:
 
-    // Called when user clicks "Add Video".
+    // Detect the VirtualCam device.
+    void detectCamera();
+
+    // Start the camera/playback system.
+    void startCamera();
+
+    // Stop the camera/playback system.
+    void stopCamera();
+
+    // Add a new video.
     void addVideo();
 
-    // Rebuild the video list.
+    // Rebuild the video list on screen.
     void refreshVideoList();
 
-    // Play a particular video.
-    void playVideo(int index);
+    // Called when a video starts.
+    void onVideoStarted(int index);
 
-    // Stop a particular video.
-    void stopVideo(int index);
+    // Called when playback stops.
+    void onVideoStopped();
 
-    // Remove a particular video.
-    void removeVideo(int index);
-
-    // Update the status label.
-    void updateStatus(const QString &message);
-
-    // Display an error.
+    // Show an error.
     void showError(const QString &message);
 
 private:
 
-    // Create the basic GUI.
+    /*
+     * Create the GUI.
+     */
     void setupUi();
 
-    // Creates one row/card for one video.
+    /*
+     * Add one video row/card to the GUI.
+     */
     QWidget *createVideoWidget(int index);
 
-    // Our video manager.
-    VideoManager m_videoManager;
+    /*
+     * Update status labels.
+     */
+    void updateStatus();
 
-    // Main central widget.
-    QWidget *m_centralWidget;
+    // Main video manager.
+    VideoManager *m_videoManager;
 
-    // Main vertical layout.
-    QVBoxLayout *m_mainLayout;
+    // Virtual camera detector.
+    VirtualCameraManager *m_cameraManager;
 
-    // Area where video rows are displayed.
-    QScrollArea *m_scrollArea;
+    // Camera status text.
+    QLabel *m_cameraStatusLabel;
 
-    // Widget inside the scroll area.
+    // Device path text.
+    QLabel *m_deviceLabel;
+
+    // General status text.
+    QLabel *m_statusLabel;
+
+    // Container for video rows.
     QWidget *m_videoContainer;
 
-    // Layout inside video container.
+    // Layout containing video rows.
     QVBoxLayout *m_videoLayout;
 
-    // Add button.
+    // Start camera button.
+    QPushButton *m_startButton;
+
+    // Stop camera button.
+    QPushButton *m_stopButton;
+
+    // Add video button.
     QPushButton *m_addButton;
-
-    // Start virtual camera button.
-    QPushButton *m_startCameraButton;
-
-    // Stop virtual camera button.
-    QPushButton *m_stopCameraButton;
-
-    // Shows current status.
-    QLabel *m_statusLabel;
 };
 
 #endif // MAINWINDOW_H

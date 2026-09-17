@@ -44,7 +44,8 @@ template <> constexpr inline auto FFmpegProcess::qt_create_metaobjectdata<qt_met
         "stopped",
         "errorOccurred",
         "message",
-        "outputMessage"
+        "outputReceived",
+        "output"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -56,9 +57,9 @@ template <> constexpr inline auto FFmpegProcess::qt_create_metaobjectdata<qt_met
         QtMocHelpers::SignalData<void(const QString &)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 5 },
         }}),
-        // Signal 'outputMessage'
+        // Signal 'outputReceived'
         QtMocHelpers::SignalData<void(const QString &)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 5 },
+            { QMetaType::QString, 7 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -86,7 +87,7 @@ void FFmpegProcess::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 0: _t->started(); break;
         case 1: _t->stopped(); break;
         case 2: _t->errorOccurred((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 3: _t->outputMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->outputReceived((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -97,7 +98,7 @@ void FFmpegProcess::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
             return;
         if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(const QString & )>(_a, &FFmpegProcess::errorOccurred, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(const QString & )>(_a, &FFmpegProcess::outputMessage, 3))
+        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(const QString & )>(_a, &FFmpegProcess::outputReceived, 3))
             return;
     }
 }
@@ -152,7 +153,7 @@ void FFmpegProcess::errorOccurred(const QString & _t1)
 }
 
 // SIGNAL 3
-void FFmpegProcess::outputMessage(const QString & _t1)
+void FFmpegProcess::outputReceived(const QString & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
 }

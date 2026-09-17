@@ -1,23 +1,28 @@
 cmake_minimum_required(VERSION 3.16)
 
-# Name of our application
-project(VirtualCamManager VERSION 1.0 LANGUAGES CXX)
+project(VirtualCamManager
+    VERSION 1.0
+    LANGUAGES CXX
+)
 
-# We use modern C++
+# Use modern C++.
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Enable Qt's automatic processing of things like signals and slots.
+# Enable Qt's automatic processing of:
+#
+# Q_OBJECT
+# signals
+# slots
+#
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-# Find Qt 6.
-# Widgets gives us normal desktop GUI components such as:
-# buttons, labels, layouts, windows, etc.
+# Find Qt6 Widgets.
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-# All source files in our application.
+# Source files.
 add_executable(VirtualCamManager
 
     src/main.cpp
@@ -33,10 +38,15 @@ add_executable(VirtualCamManager
 
     src/FFmpegProcess.cpp
     src/FFmpegProcess.h
+
+    # NEW:
+    # Detects VirtualCam automatically.
+    src/VirtualCameraManager.cpp
+    src/VirtualCameraManager.h
 )
 
-# Link our program with Qt Widgets.
+# Link Qt Widgets.
 target_link_libraries(VirtualCamManager
     PRIVATE
-    Qt6::Widgets
+        Qt6::Widgets
 )

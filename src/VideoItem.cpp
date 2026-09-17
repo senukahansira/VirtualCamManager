@@ -3,43 +3,37 @@
 #include <QFileInfo>
 
 /*
- * Constructor.
- *
- * We receive the video's full path and save it.
+ * Constructor
  */
-VideoItem::VideoItem(const QString &filePath)
-    : m_filePath(filePath)
+VideoItem::VideoItem(const QString &path)
+    : m_path(path)
 {
 }
 
+
 /*
- * Return the full path.
- *
- * Example:
- *
- * /home/myuser/Videos/ll.mp4
+ * Return the complete video path.
  */
-QString VideoItem::filePath() const
+QString VideoItem::path() const
 {
-    return m_filePath;
+    return m_path;
 }
+
 
 /*
  * Return only the filename.
  *
- * QFileInfo removes the directory part.
- *
  * Example:
  *
- * /home/myuser/Videos/ll.mp4
+ * /home/user/Downloads/sandy.mp4
  *
  * becomes:
  *
- * ll.mp4
+ * sandy.mp4
  */
-QString VideoItem::fileName() const
+QString VideoItem::name() const
 {
-    QFileInfo info(m_filePath);
+    QFileInfo fileInfo(m_path);
 
-    return info.fileName();
+    return fileInfo.fileName();
 }

@@ -4,32 +4,34 @@
 #include <QString>
 
 /*
- * VideoItem represents ONE video in our video list.
- *
- * For example:
- *
  * VideoItem
- *     name     = "ll.mp4"
- *     filePath = "/home/user/Videos/ll.mp4"
+ *
+ * This is a very small data class.
+ *
+ * It represents ONE video in our application.
+ *
+ * Example:
+ *
+ *     Name: sandy.mp4
+ *     Path: /home/user/Downloads/sandy.mp4
  */
 class VideoItem
 {
 public:
 
     // Constructor.
-    VideoItem(const QString &filePath);
+    VideoItem(const QString &path = QString());
 
-    // Return the complete path to the video.
-    QString filePath() const;
+    // Return the complete file path.
+    QString path() const;
 
     // Return only the filename.
-    // Example: "ll.mp4"
-    QString fileName() const;
+    QString name() const;
 
 private:
 
-    // Full path to the video file.
-    QString m_filePath;
+    // Complete path to the video file.
+    QString m_path;
 };
 
 #endif // VIDEOITEM_H

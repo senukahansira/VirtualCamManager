@@ -340,27 +340,10 @@ CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /usr/include/qt6/QtWidgets/QVBoxLayout \
- /usr/include/qt6/QtWidgets/qboxlayout.h \
- /usr/include/qt6/QtWidgets/qlayout.h \
- /usr/include/qt6/QtWidgets/qlayoutitem.h \
- /usr/include/qt6/QtWidgets/qgridlayout.h \
- /usr/include/qt6/QtWidgets/QLabel /usr/include/qt6/QtWidgets/qlabel.h \
- /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtGui/qpicture.h \
- /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
- /usr/include/qt6/QtWidgets/QPushButton \
- /usr/include/qt6/QtWidgets/qpushbutton.h \
- /usr/include/qt6/QtWidgets/qabstractbutton.h \
- /usr/include/qt6/QtWidgets/QScrollArea \
- /usr/include/qt6/QtWidgets/qscrollarea.h \
- /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
- /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
- /usr/include/qt6/QtWidgets/QFrame \
+ /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_VideoManager.cpp \
  /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoManager.h \
+ /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
  /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoItem.h \
  /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/FFmpegProcess.h \
- /usr/include/qt6/QtGui/qtextcursor.h \
- /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
- /usr/include/qt6/QtGui/qtextoption.h \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_VideoManager.cpp \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoManager.h
+ /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_VirtualCameraManager.cpp \
+ /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VirtualCameraManager.h

@@ -8,6 +8,7 @@ VirtualCamManager: \
   CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o \
   CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o \
   CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o \
+  CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o \
   /usr/lib/libQt6Widgets.so.6.11.1 \
   /usr/lib/libQt6Gui.so.6.11.1 \
   /usr/lib/libGLX.so \
@@ -105,6 +106,8 @@ CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o:
 CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o:
 
 CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o:
+
+CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o:
 
 /usr/lib/libQt6Widgets.so.6.11.1:
 

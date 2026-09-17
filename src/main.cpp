@@ -1,26 +1,47 @@
 #include <QApplication>
+
 #include "MainWindow.h"
 
 /*
- * main()
+ * Program entry point.
  *
- * This is where our C++ program starts.
- *
- * QApplication creates the Qt application.
- * MainWindow creates our actual GUI.
+ * Every C++ program starts execution from main().
  */
 int main(int argc, char *argv[])
 {
+    /*
+     * QApplication manages the Qt application.
+     *
+     * It handles things such as:
+     *
+     * - Windows
+     * - Mouse
+     * - Keyboard
+     * - Events
+     * - GUI rendering
+     */
     QApplication app(argc, argv);
 
-    // Create our main application window.
+    /*
+     * Create our main window.
+     */
     MainWindow window;
 
-    // Show the window on the screen.
+    /*
+     * Show the window.
+     */
     window.show();
 
-    // Start Qt's event loop.
-    // This keeps the application running and allows
-    // buttons, mouse clicks, etc. to work.
+    /*
+     * Start Qt's event loop.
+     *
+     * The program stays here waiting for:
+     *
+     * - Button clicks
+     * - Mouse events
+     * - Keyboard events
+     * - QProcess signals
+     * - etc.
+     */
     return app.exec();
 }

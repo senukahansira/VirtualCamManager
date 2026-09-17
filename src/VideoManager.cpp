@@ -1,113 +1,63 @@
 #include "VideoManager.h"
 
-#include <QFileInfo>
-
 /*
- * Constructor.
+ * Constructor
  */
 VideoManager::VideoManager(QObject *parent)
     : QObject(parent),
-      m_currentVideoIndex(-1)
+      m_ffmpeg(new FFmpegProcess(this)),
+      m_currentIndex(-1)
 {
     /*
-     * When FFmpeg starts, tell the GUI.
+     * Forward FFmpeg signals to whoever is using VideoManager.
+     *
+     * This keeps FFmpeg details hidden from the GUI.
      */
-    connect(&m_ffmpeg,
-            &FFmpegProcess::started,
+    connect(m_ffmpeg,
+            &FFmpegProcess::errorOccurred,
             this,
-            [this]()
-            {
-                emit statusMessage("Video is now playing.");
-            });
+            &VideoManager::errorOccurred);
 
-    /*
-     * When FFmpeg stops.
-     */
-    connect(&m_ffmpeg,
+    connect(m_ffmpeg,
+            &FFmpegProcess::outputReceived,
+            this,
+            &VideoManager::ffmpegOutput);
+
+    connect(m_ffmpeg,
             &FFmpegProcess::stopped,
             this,
             [this]()
-            {
-                /*
-                 * Only reset the current index if FFmpeg
-                 * isn't immediately being restarted.
-                 */
-                emit statusMessage("Video stopped.");
-            });
-
-    /*
-     * Forward FFmpeg error messages.
-     */
-    connect(&m_ffmpeg,
-            &FFmpegProcess::errorOccurred,
-            this,
-            [this](const QString &message)
-            {
-                emit errorMessage(message);
-            });
+    {
+        m_currentIndex = -1;
+        emit videoStopped();
+    });
 }
 
 
 /*
- * Add a video to our list.
+ * Add a video.
  */
-bool VideoManager::addVideo(const QString &filePath)
+bool VideoManager::addVideo(const QString &path)
 {
-    /*
-     * Don't allow more than 10 videos.
-     */
+    // Do not allow more than 10 videos.
     if (m_videos.size() >= MAX_VIDEOS)
-    {
-        emit errorMessage(
-            "You can only add a maximum of 10 videos."
-        );
-
         return false;
-    }
 
-    /*
-     * Check whether the file actually exists.
-     */
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists() || !fileInfo.isFile())
-    {
-        emit errorMessage(
-            "The selected video file does not exist."
-        );
-
+    // Do not add an empty path.
+    if (path.isEmpty())
         return false;
-    }
 
-    /*
-     * Prevent adding exactly the same file twice.
-     */
-    for (VideoItem *video : m_videos)
+    // Prevent duplicate files.
+    for (const VideoItem &video : m_videos)
     {
-        if (video->filePath() == filePath)
-        {
-            emit errorMessage(
-                "This video has already been added."
-            );
-
+        if (video.path() == path)
             return false;
-        }
     }
 
-    /*
-     * Create a new VideoItem.
-     *
-     * We use the full file path.
-     */
-    VideoItem *video = new VideoItem(filePath);
-
-    m_videos.append(video);
+    // Add the new video.
+    m_videos.append(VideoItem(path));
 
     emit videosChanged();
-
-    emit statusMessage(
-        QString("Added video: %1").arg(video->fileName())
-    );
 
     return true;
 }
@@ -116,151 +66,149 @@ bool VideoManager::addVideo(const QString &filePath)
 /*
  * Remove a video.
  */
-bool VideoManager::removeVideo(int index)
+void VideoManager::removeVideo(int index)
 {
-    /*
-     * Make sure the index is valid.
-     */
+    // Check that index is valid.
     if (index < 0 || index >= m_videos.size())
-    {
-        return false;
-    }
+        return;
 
     /*
      * If the video being removed is currently playing,
      * stop FFmpeg first.
      */
-    if (index == m_currentVideoIndex)
+    if (index == m_currentIndex)
     {
-        stopVideo();
+        stop();
     }
 
-    /*
-     * Delete the VideoItem object.
-     */
-    delete m_videos[index];
-
-    /*
-     * Remove it from the QVector.
-     */
     m_videos.removeAt(index);
 
     /*
-     * If our current video index was after the removed item,
-     * move it back by one.
+     * If a video before the current one was removed,
+     * adjust the index.
      */
-    if (m_currentVideoIndex > index)
+    if (m_currentIndex > index)
     {
-        --m_currentVideoIndex;
+        --m_currentIndex;
     }
 
     emit videosChanged();
-
-    return true;
 }
 
 
 /*
- * Return the number of videos.
+ * Return the video list.
  */
-int VideoManager::videoCount() const
+const QVector<VideoItem> &VideoManager::videos() const
+{
+    return m_videos;
+}
+
+
+/*
+ * Return number of videos.
+ */
+int VideoManager::count() const
 {
     return m_videos.size();
 }
 
 
 /*
- * Return a VideoItem at a particular index.
+ * Start a video.
  */
-VideoItem *VideoManager::videoAt(int index)
-{
-    if (index < 0 || index >= m_videos.size())
-    {
-        return nullptr;
-    }
-
-    return m_videos[index];
-}
-
-
-/*
- * Play a video.
- */
-void VideoManager::playVideo(int index)
+bool VideoManager::play(int index)
 {
     /*
-     * Check the index.
+     * Validate the index.
      */
     if (index < 0 || index >= m_videos.size())
     {
-        return;
-    }
-
-    VideoItem *video = m_videos[index];
-
-    if (!video)
-    {
-        return;
+        emit errorOccurred("Invalid video selected.");
+        return false;
     }
 
     /*
-     * If another video is playing,
-     * stop it first.
+     * We need a virtual camera before starting FFmpeg.
      */
-    if (m_ffmpeg.isRunning())
+    if (m_cameraDevice.isEmpty())
     {
-        m_ffmpeg.stop();
+        emit errorOccurred(
+            "No VirtualCam device has been detected."
+        );
+
+        return false;
     }
 
     /*
-     * Remember which video is active.
+     * Start FFmpeg with the selected video.
+     *
+     * If another video is playing, FFmpegProcess::start()
+     * automatically stops it first.
      */
-    m_currentVideoIndex = index;
-
-    emit currentVideoChanged(index);
-
-    emit statusMessage(
-        QString("Starting: %1").arg(video->fileName())
+    m_ffmpeg->start(
+        m_videos[index].path(),
+        m_cameraDevice
     );
 
-    /*
-     * Start FFmpeg with the selected file.
-     */
-    m_ffmpeg.start(video->filePath());
+    m_currentIndex = index;
+
+    emit videoStarted(index);
+
+    return true;
 }
 
 
 /*
- * Stop the currently playing video.
+ * Stop playback.
  */
-void VideoManager::stopVideo()
+void VideoManager::stop()
 {
-    if (m_ffmpeg.isRunning())
+    if (!m_ffmpeg->isRunning())
     {
-        m_ffmpeg.stop();
+        m_currentIndex = -1;
+        return;
     }
 
-    m_currentVideoIndex = -1;
+    m_ffmpeg->stop();
 
-    emit currentVideoChanged(-1);
+    m_currentIndex = -1;
 
-    emit statusMessage("No video is playing.");
+    emit videoStopped();
 }
 
 
 /*
- * Return the current video index.
- */
-int VideoManager::currentVideoIndex() const
-{
-    return m_currentVideoIndex;
-}
-
-
-/*
- * Return whether FFmpeg is running.
+ * Check whether FFmpeg is running.
  */
 bool VideoManager::isPlaying() const
 {
-    return m_ffmpeg.isRunning();
+    return m_ffmpeg->isRunning();
+}
+
+
+/*
+ * Return current video index.
+ */
+int VideoManager::currentIndex() const
+{
+    return m_currentIndex;
+}
+
+
+/*
+ * Set the V4L2 device.
+ */
+void VideoManager::setCameraDevice(const QString &devicePath)
+{
+    m_cameraDevice = devicePath;
+}
+
+
+/*
+ * Return the V4L2 device.
+ */
+QString VideoManager::cameraDevice() const
+{
+    return m_cameraDevice;
 }

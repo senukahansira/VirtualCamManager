@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/senu/Documents/VirtualCamManager/src/MainWindow.cpp" "CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o" "gcc" "CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o.d"
   "/home/senu/Documents/VirtualCamManager/src/VideoItem.cpp" "CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o" "gcc" "CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o.d"
   "/home/senu/Documents/VirtualCamManager/src/VideoManager.cpp" "CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o" "gcc" "CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o.d"
+  "/home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp" "CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o" "gcc" "CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o.d"
   "/home/senu/Documents/VirtualCamManager/src/main.cpp" "CMakeFiles/VirtualCamManager.dir/src/main.cpp.o" "gcc" "CMakeFiles/VirtualCamManager.dir/src/main.cpp.o.d"
   "" "VirtualCamManager" "gcc" "CMakeFiles/VirtualCamManager.dir/link.d"
   )

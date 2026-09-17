@@ -1,570 +1,613 @@
 #include "MainWindow.h"
 
+#include "VideoManager.h"
+#include "VirtualCameraManager.h"
+
 #include <QFileDialog>
-#include <QMessageBox>
 #include <QHBoxLayout>
-#include <QSpacerItem>
-#include <QSizePolicy>
-#include <QFont>
+#include <QLabel>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QScrollArea>
+#include <QVBoxLayout>
+#include <QWidget>
+
 
 /*
- * Constructor.
+ * Constructor
  */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
-      m_centralWidget(nullptr),
-      m_mainLayout(nullptr),
-      m_scrollArea(nullptr),
-      m_videoContainer(nullptr),
-      m_videoLayout(nullptr),
-      m_addButton(nullptr),
-      m_startCameraButton(nullptr),
-      m_stopCameraButton(nullptr),
-      m_statusLabel(nullptr)
+      m_videoManager(new VideoManager(this)),
+      m_cameraManager(new VirtualCameraManager(this))
 {
     /*
-     * Create our GUI.
+     * Build the graphical interface.
      */
     setupUi();
 
     /*
-     * When the video list changes,
-     * rebuild the GUI list.
+     * Connect VideoManager signals to GUI slots.
      */
-    connect(&m_videoManager,
-            &VideoManager::videosChanged,
-            this,
-            &MainWindow::refreshVideoList);
+    connect(
+        m_videoManager,
+        &VideoManager::videosChanged,
+        this,
+        &MainWindow::refreshVideoList
+    );
+
+    connect(
+        m_videoManager,
+        &VideoManager::videoStarted,
+        this,
+        &MainWindow::onVideoStarted
+    );
+
+    connect(
+        m_videoManager,
+        &VideoManager::videoStopped,
+        this,
+        &MainWindow::onVideoStopped
+    );
+
+    connect(
+        m_videoManager,
+        &VideoManager::errorOccurred,
+        this,
+        &MainWindow::showError
+    );
 
     /*
-     * Receive status messages.
+     * Try to find VirtualCam immediately when the application starts.
      */
-    connect(&m_videoManager,
-            &VideoManager::statusMessage,
-            this,
-            &MainWindow::updateStatus);
+    detectCamera();
 
     /*
-     * Receive error messages.
-     */
-    connect(&m_videoManager,
-            &VideoManager::errorMessage,
-            this,
-            &MainWindow::showError);
-
-    /*
-     * Set initial window size.
-     */
-    resize(900, 650);
-
-    /*
-     * Window title.
-     */
-    setWindowTitle("Virtual Camera Manager");
-
-    /*
-     * Create the initial empty video list.
+     * Initially there are no videos.
      */
     refreshVideoList();
 }
 
 
 /*
- * Create the GUI.
+ * Build the GUI.
  */
 void MainWindow::setupUi()
 {
-    /*
-     * Main central widget.
-     */
-    m_centralWidget = new QWidget(this);
-
-    setCentralWidget(m_centralWidget);
+    setWindowTitle("Virtual Camera Manager");
 
     /*
-     * Main layout.
-     *
-     * Everything is arranged vertically.
+     * Give the main window a reasonable starting size.
      */
-    m_mainLayout = new QVBoxLayout(m_centralWidget);
-
-    m_mainLayout->setContentsMargins(15, 15, 15, 15);
-
-    m_mainLayout->setSpacing(10);
-
+    resize(850, 650);
 
     /*
-     * =====================================================
-     * TITLE
-     * =====================================================
+     * Central widget.
+     */
+    QWidget *centralWidget = new QWidget(this);
+
+    setCentralWidget(centralWidget);
+
+    /*
+     * Main vertical layout.
+     */
+    QVBoxLayout *mainLayout =
+        new QVBoxLayout(centralWidget);
+
+    /*
+     * -----------------------------
+     * CAMERA SECTION
+     * -----------------------------
      */
 
-    QLabel *titleLabel = new QLabel(
-        "Virtual Camera Manager",
-        this
+    QLabel *titleLabel =
+        new QLabel("<h2>Virtual Camera Manager</h2>");
+
+    mainLayout->addWidget(titleLabel);
+
+    /*
+     * Camera status.
+     */
+    m_cameraStatusLabel =
+        new QLabel("Camera: Checking...");
+
+    mainLayout->addWidget(
+        m_cameraStatusLabel
     );
 
     /*
-     * Make title bigger.
+     * Device path.
      */
-    QFont titleFont;
+    m_deviceLabel =
+        new QLabel("Device: Not detected");
 
-    titleFont.setPointSize(20);
-    titleFont.setBold(true);
-
-    titleLabel->setFont(titleFont);
-
-    m_mainLayout->addWidget(titleLabel);
-
-
-    /*
-     * =====================================================
-     * CAMERA CONTROL AREA
-     * =====================================================
-     */
-
-    QHBoxLayout *cameraLayout = new QHBoxLayout();
-
-    /*
-     * Display the virtual camera device.
-     */
-    QLabel *cameraLabel = new QLabel(
-        "Virtual Camera: /dev/video0",
-        this
-    );
-
-    cameraLayout->addWidget(cameraLabel);
-
-    /*
-     * Spacer pushes buttons to the right.
-     */
-    cameraLayout->addStretch();
-
-
-    /*
-     * Start camera button.
-     *
-     * NOTE:
-     *
-     * v4l2loopback itself is loaded using modprobe.
-     * This first version expects you to load it before
-     * starting the application.
-     */
-    m_startCameraButton = new QPushButton(
-        "Start Camera",
-        this
-    );
-
-    cameraLayout->addWidget(m_startCameraButton);
-
-
-    /*
-     * Stop camera button.
-     *
-     * For this first version this stops the FFmpeg output.
-     */
-    m_stopCameraButton = new QPushButton(
-        "Stop Camera",
-        this
-    );
-
-    cameraLayout->addWidget(m_stopCameraButton);
-
-    m_mainLayout->addLayout(cameraLayout);
-
-
-    /*
-     * =====================================================
-     * ADD VIDEO BUTTON
-     * =====================================================
-     */
-
-    QHBoxLayout *addLayout = new QHBoxLayout();
-
-    m_addButton = new QPushButton(
-        "+ Add Video",
-        this
+    mainLayout->addWidget(
+        m_deviceLabel
     );
 
     /*
-     * Connect button click to addVideo().
+     * Camera buttons.
      */
-    connect(m_addButton,
-            &QPushButton::clicked,
-            this,
-            &MainWindow::addVideo);
+    QHBoxLayout *cameraButtonLayout =
+        new QHBoxLayout();
 
-    addLayout->addWidget(m_addButton);
+    m_startButton =
+        new QPushButton("Start Camera");
 
-    addLayout->addStretch();
+    m_stopButton =
+        new QPushButton("Stop Camera");
 
-    m_mainLayout->addLayout(addLayout);
+    QPushButton *detectButton =
+        new QPushButton("Detect Camera");
 
+    cameraButtonLayout->addWidget(
+        m_startButton
+    );
+
+    cameraButtonLayout->addWidget(
+        m_stopButton
+    );
+
+    cameraButtonLayout->addWidget(
+        detectButton
+    );
+
+    mainLayout->addLayout(
+        cameraButtonLayout
+    );
 
     /*
-     * =====================================================
-     * VIDEO LIST
-     * =====================================================
+     * Connect buttons.
      */
+    connect(
+        m_startButton,
+        &QPushButton::clicked,
+        this,
+        &MainWindow::startCamera
+    );
+
+    connect(
+        m_stopButton,
+        &QPushButton::clicked,
+        this,
+        &MainWindow::stopCamera
+    );
+
+    connect(
+        detectButton,
+        &QPushButton::clicked,
+        this,
+        &MainWindow::detectCamera
+    );
 
     /*
-     * QScrollArea allows us to have more videos than
-     * physically fit on the screen.
+     * -----------------------------
+     * VIDEO SECTION
+     * -----------------------------
      */
-    m_scrollArea = new QScrollArea(this);
 
-    m_scrollArea->setWidgetResizable(true);
+    QHBoxLayout *videoHeader =
+        new QHBoxLayout();
+
+    QLabel *videosLabel =
+        new QLabel("<h3>Videos</h3>");
+
+    m_addButton =
+        new QPushButton("+ Add Video");
+
+    videoHeader->addWidget(
+        videosLabel
+    );
+
+    videoHeader->addStretch();
+
+    videoHeader->addWidget(
+        m_addButton
+    );
+
+    mainLayout->addLayout(
+        videoHeader
+    );
 
     /*
-     * Container widget.
+     * Add video button.
      */
-    m_videoContainer = new QWidget();
+    connect(
+        m_addButton,
+        &QPushButton::clicked,
+        this,
+        &MainWindow::addVideo
+    );
 
     /*
-     * Layout inside container.
-     */
-    m_videoLayout = new QVBoxLayout(m_videoContainer);
-
-    m_videoLayout->setContentsMargins(5, 5, 5, 5);
-
-    m_videoLayout->setSpacing(8);
-
-    /*
-     * Add a stretch at the bottom.
+     * Scroll area.
      *
-     * This keeps video cards at the top.
+     * This allows us to have up to 10 videos without
+     * making the entire window enormous.
+     */
+    QScrollArea *scrollArea =
+        new QScrollArea();
+
+    scrollArea->setWidgetResizable(true);
+
+    /*
+     * Container inside the scroll area.
+     */
+    m_videoContainer =
+        new QWidget();
+
+    m_videoLayout =
+        new QVBoxLayout(
+            m_videoContainer
+        );
+
+    /*
+     * Empty space at the bottom.
      */
     m_videoLayout->addStretch();
 
-    /*
-     * Put container inside scroll area.
-     */
-    m_scrollArea->setWidget(m_videoContainer);
+    scrollArea->setWidget(
+        m_videoContainer
+    );
+
+    mainLayout->addWidget(
+        scrollArea
+    );
 
     /*
-     * Add scroll area to main window.
-     */
-    m_mainLayout->addWidget(m_scrollArea);
-
-
-    /*
-     * =====================================================
+     * -----------------------------
      * STATUS
-     * =====================================================
+     * -----------------------------
      */
 
-    m_statusLabel = new QLabel(
-        "Ready. Add a video.",
-        this
+    m_statusLabel =
+        new QLabel("Status: Ready");
+
+    mainLayout->addWidget(
+        m_statusLabel
     );
-
-    m_statusLabel->setFrameStyle(
-        QFrame::StyledPanel |
-        QFrame::Sunken
-    );
-
-    m_mainLayout->addWidget(m_statusLabel);
-
 
     /*
-     * =====================================================
-     * CAMERA BUTTONS
-     * =====================================================
-     *
-     * Start Camera:
-     *
-     * In this version we don't load the kernel module
-     * automatically. The user should run:
-     *
-     * sudo modprobe v4l2loopback \
-     *      devices=1 \
-     *      video_nr=10 \
-     *      card_label="VirtualCam" \
-     *      exclusive_caps=1
-     *
-     * Then FFmpeg writes to /dev/video0.
-     *
-     * So clicking Start Camera simply displays a status.
+     * Initial button state.
      */
+    m_startButton->setEnabled(false);
+    m_stopButton->setEnabled(false);
+}
 
-    connect(
-        m_startCameraButton,
-        &QPushButton::clicked,
-        this,
-        [this]()
-        {
-            updateStatus(
-                "Virtual camera ready. "
-                "Select a video and press Play."
-            );
-        }
-    );
 
+/*
+ * Detect VirtualCam.
+ */
+void MainWindow::detectCamera()
+{
+    /*
+     * Ask VirtualCameraManager to search /dev/video*.
+     */
+    if (m_cameraManager->detect())
+    {
+        const QString device =
+            m_cameraManager->devicePath();
+
+        const QString name =
+            m_cameraManager->cameraName();
+
+        /*
+         * Give the detected device to VideoManager.
+         */
+        m_videoManager->setCameraDevice(
+            device
+        );
+
+        /*
+         * Update GUI.
+         */
+        m_cameraStatusLabel->setText(
+            "Camera: Connected (" + name + ")"
+        );
+
+        m_deviceLabel->setText(
+            "Device: " + device
+        );
+
+        /*
+         * Camera can now be started.
+         */
+        m_startButton->setEnabled(true);
+
+        m_statusLabel->setText(
+            "Status: Virtual camera detected."
+        );
+    }
+    else
+    {
+        /*
+         * No VirtualCam found.
+         */
+        m_videoManager->setCameraDevice(
+            QString()
+        );
+
+        m_cameraStatusLabel->setText(
+            "Camera: Not detected"
+        );
+
+        m_deviceLabel->setText(
+            "Device: None"
+        );
+
+        m_startButton->setEnabled(false);
+
+        m_statusLabel->setText(
+            "Status: VirtualCam not found. "
+            "Load v4l2loopback first."
+        );
+    }
+}
+
+
+/*
+ * Start Camera button.
+ */
+void MainWindow::startCamera()
+{
+    /*
+     * Make sure the camera still exists.
+     *
+     * It may have been unplugged/recreated after the application
+     * started.
+     */
+    if (!m_cameraManager->detect())
+    {
+        showError(
+            "VirtualCam was not found."
+        );
+
+        return;
+    }
 
     /*
-     * Stop Camera stops FFmpeg.
+     * Update VideoManager with the latest device path.
      */
-    connect(
-        m_stopCameraButton,
-        &QPushButton::clicked,
-        this,
-        [this]()
-        {
-            m_videoManager.stopVideo();
+    m_videoManager->setCameraDevice(
+        m_cameraManager->devicePath()
+    );
 
-            updateStatus(
-                "Virtual camera output stopped."
-            );
-        }
+    /*
+     * If there are no videos, there is nothing for FFmpeg
+     * to play yet.
+     */
+    if (m_videoManager->count() == 0)
+    {
+        m_statusLabel->setText(
+            "Status: Camera ready. Add a video."
+        );
+
+        m_stopButton->setEnabled(false);
+
+        return;
+    }
+
+    /*
+     * Start the first video automatically.
+     */
+    if (m_videoManager->play(0))
+    {
+        m_startButton->setEnabled(false);
+        m_stopButton->setEnabled(true);
+    }
+}
+
+
+/*
+ * Stop Camera button.
+ */
+void MainWindow::stopCamera()
+{
+    /*
+     * Stop FFmpeg.
+     */
+    m_videoManager->stop();
+
+    m_startButton->setEnabled(true);
+    m_stopButton->setEnabled(false);
+
+    m_statusLabel->setText(
+        "Status: Camera stopped."
     );
 }
 
 
 /*
- * User clicked "Add Video".
+ * Add Video button.
  */
 void MainWindow::addVideo()
 {
     /*
-     * Open Linux/Qt file selection dialog.
+     * Check maximum number first.
      */
-    QString filePath = QFileDialog::getOpenFileName(
-        this,
-        "Select Video",
-        QString(),
-        "Video Files (*.mp4 *.mkv *.avi *.mov *.webm *.flv *.m4v);;"
-        "All Files (*)"
-    );
-
-    /*
-     * User pressed Cancel.
-     */
-    if (filePath.isEmpty())
+    if (m_videoManager->count() >=
+        VideoManager::MAX_VIDEOS)
     {
+        QMessageBox::information(
+            this,
+            "Video Limit",
+            "You can add a maximum of 10 videos."
+        );
+
         return;
     }
 
     /*
-     * Give file to VideoManager.
+     * Open file picker.
      */
-    m_videoManager.addVideo(filePath);
+    const QString path =
+        QFileDialog::getOpenFileName(
+            this,
+            "Select Video",
+            QString(),
+            "Video Files (*.mp4 *.mkv *.avi *.mov *.webm *.m4v);;All Files (*)"
+        );
+
+    /*
+     * User cancelled.
+     */
+    if (path.isEmpty())
+        return;
+
+    /*
+     * Add the selected video.
+     */
+    if (!m_videoManager->addVideo(path))
+    {
+        QMessageBox::warning(
+            this,
+            "Cannot Add Video",
+            "The video could not be added.\n\n"
+            "It may already be in the list or the "
+            "maximum of 10 videos has been reached."
+        );
+    }
 }
 
 
 /*
  * Rebuild the video list.
- *
- * We call this whenever a video is added or removed.
  */
 void MainWindow::refreshVideoList()
 {
     /*
-     * Remove all existing widgets from the video layout.
+     * Remove all existing widgets from the layout.
+     *
+     * We rebuild the list because there are only a maximum
+     * of 10 items, so this is simple and perfectly adequate.
      */
+
     while (m_videoLayout->count() > 1)
     {
-        QLayoutItem *item = m_videoLayout->takeAt(0);
+        QLayoutItem *item =
+            m_videoLayout->takeAt(0);
 
-        if (item->widget())
+        if (!item)
+            continue;
+
+        QWidget *widget =
+            item->widget();
+
+        if (widget)
         {
-            /*
-             * deleteLater safely deletes the widget.
-             */
-            item->widget()->deleteLater();
+            widget->deleteLater();
         }
 
         delete item;
     }
 
-
     /*
-     * Create a GUI card for each video.
+     * Create a widget for every video.
      */
     for (int i = 0;
-         i < m_videoManager.videoCount();
+         i < m_videoManager->count();
          ++i)
     {
         QWidget *videoWidget =
             createVideoWidget(i);
 
         /*
-         * Insert before our bottom stretch.
+         * Insert before the stretch at the bottom.
          */
         m_videoLayout->insertWidget(
-            m_videoLayout->count() - 1,
+            i,
             videoWidget
         );
     }
 
-
     /*
-     * Update Add Video button.
+     * Add button is disabled when 10 videos exist.
      */
-    if (m_videoManager.videoCount()
-        >= VideoManager::MAX_VIDEOS)
-    {
-        m_addButton->setEnabled(false);
+    m_addButton->setEnabled(
+        m_videoManager->count()
+        < VideoManager::MAX_VIDEOS
+    );
 
-        m_addButton->setText(
-            "Maximum 10 Videos"
-        );
-    }
-    else
-    {
-        m_addButton->setEnabled(true);
-
-        m_addButton->setText(
-            QString("+ Add Video (%1/10)")
-                .arg(m_videoManager.videoCount())
-        );
-    }
+    updateStatus();
 }
 
 
 /*
- * Create one GUI card for one video.
+ * Create one video row.
  */
 QWidget *MainWindow::createVideoWidget(int index)
 {
-    /*
-     * Get video object.
-     */
-    VideoItem *video =
-        m_videoManager.videoAt(index);
+    QWidget *widget =
+        new QWidget();
 
     /*
-     * Safety check.
+     * Give each video a border.
      */
-    if (!video)
-    {
-        return new QWidget();
-    }
-
-
-    /*
-     * Create frame around video.
-     */
-    QFrame *frame = new QFrame(this);
-
-    frame->setFrameStyle(
-        QFrame::StyledPanel |
-        QFrame::Raised
+    widget->setStyleSheet(
+        "QWidget {"
+        "border: 1px solid #555;"
+        "border-radius: 6px;"
+        "padding: 6px;"
+        "}"
     );
 
-    /*
-     * Horizontal layout:
-     *
-     * [number] [filename]     [Play] [Stop] [Remove]
-     */
     QHBoxLayout *layout =
-        new QHBoxLayout(frame);
-
-    layout->setContentsMargins(
-        10, 8, 10, 8
-    );
-
+        new QHBoxLayout(widget);
 
     /*
-     * Video number.
+     * Video filename.
      */
-    QLabel *numberLabel =
-        new QLabel(
-            QString("%1.").arg(index + 1),
-            frame
-        );
+    const VideoItem &video =
+        m_videoManager->videos().at(index);
 
-    QFont numberFont;
-
-    numberFont.setBold(true);
-
-    numberLabel->setFont(numberFont);
-
-    numberLabel->setMinimumWidth(30);
-
-    layout->addWidget(numberLabel);
-
-
-    /*
-     * Filename label.
-     */
     QLabel *nameLabel =
-        new QLabel(
-            video->fileName(),
-            frame
-        );
+        new QLabel(video.name());
 
     /*
-     * Allow filename to take available space.
+     * Let the filename use available space.
      */
-    nameLabel->setSizePolicy(
-        QSizePolicy::Expanding,
-        QSizePolicy::Preferred
+    nameLabel->setMinimumWidth(200);
+
+    layout->addWidget(
+        nameLabel
     );
 
-    /*
-     * Tooltip shows complete path when mouse
-     * hovers over filename.
-     */
-    nameLabel->setToolTip(
-        video->filePath()
-    );
-
-    layout->addWidget(nameLabel);
-
+    layout->addStretch();
 
     /*
-     * PLAY BUTTON
+     * PLAY button.
      */
     QPushButton *playButton =
-        new QPushButton(
-            "▶ Play",
-            frame
-        );
+        new QPushButton("Play");
 
-    layout->addWidget(playButton);
-
+    layout->addWidget(
+        playButton
+    );
 
     /*
-     * STOP BUTTON
+     * STOP button.
      */
     QPushButton *stopButton =
-        new QPushButton(
-            "■ Stop",
-            frame
-        );
+        new QPushButton("Stop");
 
-    layout->addWidget(stopButton);
-
+    layout->addWidget(
+        stopButton
+    );
 
     /*
-     * REMOVE BUTTON
+     * REMOVE button.
      */
     QPushButton *removeButton =
-        new QPushButton(
-            "Remove",
-            frame
-        );
+        new QPushButton("Remove");
 
-    layout->addWidget(removeButton);
-
+    layout->addWidget(
+        removeButton
+    );
 
     /*
-     * =====================================================
-     * BUTTON SIGNALS
-     * =====================================================
+     * Capture index safely.
      *
-     * We capture "index" here.
-     *
-     * Example:
-     *
-     * Video 1 -> index 0
-     * Video 2 -> index 1
-     * Video 3 -> index 2
-     */
-
-
-    /*
-     * Play button.
+     * We store the index in a local variable.
      */
     connect(
         playButton,
@@ -572,27 +615,56 @@ QWidget *MainWindow::createVideoWidget(int index)
         this,
         [this, index]()
         {
-            playVideo(index);
+            /*
+             * Make sure VirtualCam still exists.
+             */
+            if (!m_cameraManager->detect())
+            {
+                showError(
+                    "VirtualCam was not found."
+                );
+
+                return;
+            }
+
+            /*
+             * Update device path.
+             */
+            m_videoManager->setCameraDevice(
+                m_cameraManager->devicePath()
+            );
+
+            /*
+             * Play selected video.
+             */
+            if (m_videoManager->play(index))
+            {
+                m_startButton->setEnabled(false);
+                m_stopButton->setEnabled(true);
+            }
         }
     );
 
-
     /*
-     * Stop button.
+     * STOP button.
      */
     connect(
         stopButton,
         &QPushButton::clicked,
         this,
-        [this, index]()
+        [this]()
         {
-            stopVideo(index);
+            m_videoManager->stop();
+
+            m_startButton->setEnabled(true);
+            m_stopButton->setEnabled(false);
+
+            updateStatus();
         }
     );
 
-
     /*
-     * Remove button.
+     * REMOVE button.
      */
     connect(
         removeButton,
@@ -600,105 +672,80 @@ QWidget *MainWindow::createVideoWidget(int index)
         this,
         [this, index]()
         {
-            removeVideo(index);
+            m_videoManager->removeVideo(index);
         }
     );
 
-
-    return frame;
-}
-
-
-/*
- * Play a video.
- */
-void MainWindow::playVideo(int index)
-{
-    VideoItem *video =
-        m_videoManager.videoAt(index);
-
-    if (!video)
+    /*
+     * Highlight currently playing video.
+     */
+    if (index ==
+        m_videoManager->currentIndex())
     {
-        return;
-    }
-
-    /*
-     * Tell the manager to start FFmpeg.
-     */
-    m_videoManager.playVideo(index);
-
-    /*
-     * Show status.
-     */
-    updateStatus(
-        QString("Playing: %1")
-            .arg(video->fileName())
-    );
-}
-
-
-/*
- * Stop a video.
- */
-void MainWindow::stopVideo(int index)
-{
-    Q_UNUSED(index);
-
-    /*
-     * There is only one FFmpeg output,
-     * therefore Stop stops the current output.
-     */
-    m_videoManager.stopVideo();
-}
-
-
-/*
- * Remove a video.
- */
-void MainWindow::removeVideo(int index)
-{
-    VideoItem *video =
-        m_videoManager.videoAt(index);
-
-    if (!video)
-    {
-        return;
-    }
-
-
-    /*
-     * Ask the user for confirmation.
-     */
-    QMessageBox::StandardButton result =
-        QMessageBox::question(
-            this,
-            "Remove Video",
-            QString("Remove \"%1\"?")
-                .arg(video->fileName()),
-            QMessageBox::Yes |
-            QMessageBox::No
+        widget->setStyleSheet(
+            "QWidget {"
+            "border: 2px solid #22aa55;"
+            "border-radius: 6px;"
+            "padding: 6px;"
+            "}"
         );
-
-
-    if (result == QMessageBox::Yes)
-    {
-        m_videoManager.removeVideo(index);
     }
+
+    return widget;
 }
 
 
 /*
- * Update status label.
+ * Called when a video starts.
  */
-void MainWindow::updateStatus(
-    const QString &message)
+void MainWindow::onVideoStarted(int index)
 {
-    m_statusLabel->setText(message);
+    /*
+     * Make sure the index is valid.
+     */
+    if (index < 0 ||
+        index >= m_videoManager->count())
+    {
+        return;
+    }
+
+    const QString name =
+        m_videoManager->videos()
+            .at(index)
+            .name();
+
+    m_statusLabel->setText(
+        "Status: Playing " + name
+    );
+
+    m_startButton->setEnabled(false);
+    m_stopButton->setEnabled(true);
+
+    /*
+     * Refresh list so the playing item gets highlighted.
+     */
+    refreshVideoList();
 }
 
 
 /*
- * Show an error message.
+ * Called when video playback stops.
+ */
+void MainWindow::onVideoStopped()
+{
+    m_statusLabel->setText(
+        "Status: Playback stopped."
+    );
+
+    m_startButton->setEnabled(true);
+    m_stopButton->setEnabled(false);
+
+    refreshVideoList();
+}
+
+
+/*
+ * Display an error.
  */
 void MainWindow::showError(
     const QString &message)
@@ -707,12 +754,48 @@ void MainWindow::showError(
         "Error: " + message
     );
 
-    /*
-     * Also show a popup.
-     */
     QMessageBox::warning(
         this,
-        "Virtual Camera Manager",
+        "Virtual Camera Error",
         message
     );
+}
+
+
+/*
+ * Update general status.
+ */
+void MainWindow::updateStatus()
+{
+    if (m_videoManager->isPlaying())
+    {
+        const int index =
+            m_videoManager->currentIndex();
+
+        if (index >= 0 &&
+            index < m_videoManager->count())
+        {
+            m_statusLabel->setText(
+                "Status: Playing " +
+                m_videoManager->videos()
+                    .at(index)
+                    .name()
+            );
+
+            return;
+        }
+    }
+
+    if (m_cameraManager->isAvailable())
+    {
+        m_statusLabel->setText(
+            "Status: Camera ready."
+        );
+    }
+    else
+    {
+        m_statusLabel->setText(
+            "Status: VirtualCam not detected."
+        );
+    }
 }

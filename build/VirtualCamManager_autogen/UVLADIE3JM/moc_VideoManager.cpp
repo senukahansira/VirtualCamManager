@@ -41,27 +41,31 @@ template <> constexpr inline auto VideoManager::qt_create_metaobjectdata<qt_meta
         "VideoManager",
         "videosChanged",
         "",
-        "currentVideoChanged",
+        "videoStarted",
         "index",
-        "statusMessage",
+        "videoStopped",
+        "errorOccurred",
         "message",
-        "errorMessage"
+        "ffmpegOutput",
+        "output"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'videosChanged'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'currentVideoChanged'
+        // Signal 'videoStarted'
         QtMocHelpers::SignalData<void(int)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 4 },
         }}),
-        // Signal 'statusMessage'
-        QtMocHelpers::SignalData<void(const QString &)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 6 },
+        // Signal 'videoStopped'
+        QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'errorOccurred'
+        QtMocHelpers::SignalData<void(const QString &)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 7 },
         }}),
-        // Signal 'errorMessage'
-        QtMocHelpers::SignalData<void(const QString &)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 6 },
+        // Signal 'ffmpegOutput'
+        QtMocHelpers::SignalData<void(const QString &)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 9 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -87,20 +91,23 @@ void VideoManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->videosChanged(); break;
-        case 1: _t->currentVideoChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 2: _t->statusMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 3: _t->errorMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 1: _t->videoStarted((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: _t->videoStopped(); break;
+        case 3: _t->errorOccurred((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 4: _t->ffmpegOutput((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (VideoManager::*)()>(_a, &VideoManager::videosChanged, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VideoManager::*)(int )>(_a, &VideoManager::currentVideoChanged, 1))
+        if (QtMocHelpers::indexOfMethod<void (VideoManager::*)(int )>(_a, &VideoManager::videoStarted, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VideoManager::*)(const QString & )>(_a, &VideoManager::statusMessage, 2))
+        if (QtMocHelpers::indexOfMethod<void (VideoManager::*)()>(_a, &VideoManager::videoStopped, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VideoManager::*)(const QString & )>(_a, &VideoManager::errorMessage, 3))
+        if (QtMocHelpers::indexOfMethod<void (VideoManager::*)(const QString & )>(_a, &VideoManager::errorOccurred, 3))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (VideoManager::*)(const QString & )>(_a, &VideoManager::ffmpegOutput, 4))
             return;
     }
 }
@@ -124,14 +131,14 @@ int VideoManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
@@ -143,20 +150,26 @@ void VideoManager::videosChanged()
 }
 
 // SIGNAL 1
-void VideoManager::currentVideoChanged(int _t1)
+void VideoManager::videoStarted(int _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
 }
 
 // SIGNAL 2
-void VideoManager::statusMessage(const QString & _t1)
+void VideoManager::videoStopped()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 
 // SIGNAL 3
-void VideoManager::errorMessage(const QString & _t1)
+void VideoManager::errorOccurred(const QString & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
+}
+
+// SIGNAL 4
+void VideoManager::ffmpegOutput(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 4, nullptr, _t1);
 }
 QT_WARNING_POP

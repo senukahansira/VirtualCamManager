@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o.d"
   "CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o"
   "CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o.d"
+  "CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o"
+  "CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o.d"
   "CMakeFiles/VirtualCamManager.dir/src/main.cpp.o"
   "CMakeFiles/VirtualCamManager.dir/src/main.cpp.o.d"
   "VirtualCamManager"

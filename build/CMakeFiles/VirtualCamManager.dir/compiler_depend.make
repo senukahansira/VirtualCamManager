@@ -13,6 +13,8 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
   /home/senu/Documents/VirtualCamManager/src/VideoItem.h \
   /home/senu/Documents/VirtualCamManager/src/VideoManager.cpp \
   /home/senu/Documents/VirtualCamManager/src/VideoManager.h \
+  /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp \
+  /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.h \
   /home/senu/Documents/VirtualCamManager/src/main.cpp \
   /usr/bin/cmake \
   /usr/include/alloca.h \
@@ -413,7 +415,6 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
   /usr/include/qt6/QtCore/qtversionchecks.h \
   /usr/include/qt6/QtCore/qtypeinfo.h \
   /usr/include/qt6/QtCore/qtypes.h \
-  /usr/include/qt6/QtCore/qurl.h \
   /usr/include/qt6/QtCore/qutf8stringview.h \
   /usr/include/qt6/QtCore/qvariant.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
@@ -435,36 +436,19 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
   /usr/include/qt6/QtGui/qkeysequence.h \
   /usr/include/qt6/QtGui/qpaintdevice.h \
   /usr/include/qt6/QtGui/qpalette.h \
-  /usr/include/qt6/QtGui/qpicture.h \
   /usr/include/qt6/QtGui/qpixelformat.h \
   /usr/include/qt6/QtGui/qpixmap.h \
   /usr/include/qt6/QtGui/qpolygon.h \
   /usr/include/qt6/QtGui/qregion.h \
   /usr/include/qt6/QtGui/qrgb.h \
   /usr/include/qt6/QtGui/qrgba64.h \
-  /usr/include/qt6/QtGui/qtextdocument.h \
   /usr/include/qt6/QtGui/qtgui-config.h \
   /usr/include/qt6/QtGui/qtguiexports.h \
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
-  /usr/include/qt6/QtWidgets/QFrame \
-  /usr/include/qt6/QtWidgets/QLabel \
   /usr/include/qt6/QtWidgets/QMainWindow \
-  /usr/include/qt6/QtWidgets/QPushButton \
-  /usr/include/qt6/QtWidgets/QScrollArea \
-  /usr/include/qt6/QtWidgets/QVBoxLayout \
-  /usr/include/qt6/QtWidgets/qabstractbutton.h \
-  /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
-  /usr/include/qt6/QtWidgets/qboxlayout.h \
-  /usr/include/qt6/QtWidgets/qframe.h \
-  /usr/include/qt6/QtWidgets/qgridlayout.h \
-  /usr/include/qt6/QtWidgets/qlabel.h \
-  /usr/include/qt6/QtWidgets/qlayout.h \
-  /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qmainwindow.h \
-  /usr/include/qt6/QtWidgets/qpushbutton.h \
-  /usr/include/qt6/QtWidgets/qscrollarea.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
   /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
@@ -1007,8 +991,6 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/share/cmake/Modules/Compiler/Renesas-DetermineCompiler.cmake:
 
-/usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
-
 /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
 
 /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
@@ -1209,6 +1191,10 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandAdwaitaDecorationPluginTargetsPrecheck.cmake:
 
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandAdwaitaDecorationPluginTargets.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandAdwaitaDecorationPluginConfig.cmake:
@@ -1256,6 +1242,8 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 /usr/lib/cmake/Qt6Gui/Qt6VulkanServerBufferPluginTargetsPrecheck.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake:
 
@@ -1455,6 +1443,8 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake:
 
+/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6DrmEglServerBufferPluginTargetsPrecheck.cmake:
@@ -1505,39 +1495,11 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/lib/cmake/Qt6DBus/Qt6DBusMacros.cmake:
 
-/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargetsPrecheck.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandQtShellIntegrationPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake:
-
-/usr/include/c++/16/variant:
-
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandEglClientBufferPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandAdwaitaDecorationPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/c++/16/unordered_map:
-
-/usr/include/qt6/QtWidgets/qscrollarea.h:
 
 /usr/include/c++/16/typeinfo:
 
@@ -1554,12 +1516,6 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 /usr/include/bits/types/error_t.h:
 
 /usr/include/qt6/QtCore/qstringalgorithms.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandAdwaitaDecorationPluginTargets.cmake:
-
-/usr/include/qt6/QtGui/qtextdocument.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandIviShellIntegrationPluginTargets.cmake:
 
@@ -1590,6 +1546,8 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 /usr/include/c++/16/bits/stl_algo.h:
 
 /usr/include/c++/16/new:
+
+/usr/include/bits/types/wint_t.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake:
 
@@ -1650,6 +1608,10 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 /usr/include/c++/16/concepts:
 
 /usr/include/c++/16/bits/locale_classes.h:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake:
+
+/usr/include/c++/16/utility:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginTargetsPrecheck.cmake:
 
@@ -1801,6 +1763,14 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/include/qt6/QtCore/qyieldcpu.h:
 
+/usr/include/c++/16/bits/ios_base.h:
+
+/usr/share/cmake/Modules/Internal/FeatureTesting.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtWidgets/qmainwindow.h:
+
 /usr/include/c++/16/bits/shared_ptr_atomic.h:
 
 /usr/include/bits/types/time_t.h:
@@ -1823,23 +1793,13 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/include/qt6/QtCore/qforeach.h:
 
+/usr/include/bits/types/__FILE.h:
+
 /usr/include/c++/16/ext/aligned_buffer.h:
 
 /usr/include/sys/select.h:
 
 /usr/include/bits/types/cookie_io_functions_t.h:
-
-/usr/include/c++/16/backward/auto_ptr.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake:
-
-/usr/include/c++/16/bits/stdexcept_throwfwd.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
-
-/usr/include/qt6/QtCore/qprocessordetection.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets.cmake:
 
@@ -1849,17 +1809,7 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/include/qt6/QtCore/QProcess:
 
-/usr/include/c++/16/pstl/glue_numeric_defs.h:
-
-/usr/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake:
-
-/home/senu/Documents/VirtualCamManager/src/FFmpegProcess.h:
-
 /usr/include/c++/16/unordered_set:
-
-/usr/include/c++/16/cctype:
-
-/usr/include/bits/posix1_lim.h:
 
 /usr/include/wchar.h:
 
@@ -1891,9 +1841,81 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/include/qt6/QtCore/qlist.h:
 
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake:
+
+/usr/include/bits/time.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargetsPrecheck.cmake:
+
+/usr/include/c++/16/bits/requires_hosted.h:
+
+/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake:
+
+/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in:
+
+/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtCore/qtcoreexports.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
+
+VirtualCamManager_autogen/moc_predefs.h:
+
+/usr/include/c++/16/bits/stream_iterator.h:
+
+/usr/include/bits/types/__mbstate_t.h:
+
+/usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
+
+/home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandXdgShellIntegrationPluginTargetsPrecheck.cmake:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h:
+
+/usr/include/qt6/QtGui/qbitmap.h:
+
+/usr/include/c++/16/bits/stdexcept_throwfwd.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
+
+/usr/include/qt6/QtCore/qprocessordetection.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMngPluginConfig.cmake:
+
+/usr/include/bits/select.h:
+
+/usr/share/cmake/Modules/Compiler/PellesC-DetermineCompiler.cmake:
+
+/home/senu/Documents/VirtualCamManager/src/VideoManager.h:
+
+/usr/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake:
+
+/home/senu/Documents/VirtualCamManager/src/FFmpegProcess.h:
+
+/usr/include/c++/16/pstl/glue_numeric_defs.h:
+
+/home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.h:
+
 /usr/lib/cmake/Qt6Gui/Qt6ShmServerBufferPluginTargetsPrecheck.cmake:
 
 /usr/include/bits/long-double.h:
+
+/usr/include/c++/16/bits/stl_vector.h:
+
+/home/senu/Documents/VirtualCamManager/src/VideoItem.h:
 
 /usr/include/bits/errno.h:
 
@@ -1913,6 +1935,20 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/include/asm/errno.h:
 
+/usr/include/asm/posix_types.h:
+
+/usr/include/qt6/QtCore/qtdeprecationdefinitions.h:
+
+/usr/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake:
+
+/usr/include/strings.h:
+
+/usr/include/c++/16/bits/stl_set.h:
+
+/usr/include/asm/posix_types_64.h:
+
+/usr/include/qt6/QtCore/qsharedpointer.h:
+
 /usr/include/c++/16/bits/stl_tree.h:
 
 /usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:
@@ -1927,46 +1963,6 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/include/qt6/QtCore/qvariant.h:
 
-/usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake:
-
-/usr/include/c++/16/string_view:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake:
-
-/usr/include/bits/types/__fpos64_t.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/QString:
-
-/usr/include/qt6/QtCore/qfunctionpointer.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake:
-
-/home/senu/Documents/VirtualCamManager/CMakeLists.txt:
-
-/usr/include/sys/types.h:
-
-/usr/include/c++/16/bits/alloc_traits.h:
-
-/usr/include/bits/floatn-common.h:
-
-/usr/include/c++/16/bits/invoke.h:
-
-/usr/include/qt6/QtWidgets/qtabwidget.h:
-
-/usr/include/qt6/QtGui/qbitmap.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMngPluginConfig.cmake:
-
-/usr/include/bits/select.h:
-
-/usr/share/cmake/Modules/Compiler/PellesC-DetermineCompiler.cmake:
-
-/home/senu/Documents/VirtualCamManager/src/VideoManager.h:
-
 /usr/include/bits/pthreadtypes.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandFullScreenShellV1IntegrationPluginConfig.cmake:
@@ -1979,9 +1975,7 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 
 /usr/include/c++/16/ratio:
 
-/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
-
-/usr/include/bits/stdlib-float.h:
+/usr/include/bits/time64.h:
 
 /usr/include/c++/16/bits/allocator.h:
 
@@ -1992,46 +1986,6 @@ VirtualCamManager_autogen/timestamp: /home/senu/Documents/VirtualCamManager/CMak
 /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake:
 
 /usr/include/qt6/QtCore/qspan.h:
-
-/usr/include/bits/time64.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake:
-
-/usr/include/bits/time.h:
-
-/usr/include/asm/posix_types.h:
-
-/usr/include/qt6/QtCore/qtdeprecationdefinitions.h:
-
-/usr/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake:
-
-/usr/include/strings.h:
-
-/usr/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake:
-
-/usr/include/c++/16/bits/exception_ptr.h:
-
-/usr/include/qt6/QtCore/qsharedpointer.h:
-
-/usr/include/c++/16/bits/stl_set.h:
-
-/usr/include/asm/posix_types_64.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginTargetsPrecheck.cmake:
-
-/usr/include/c++/16/bits/requires_hosted.h:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:
-
-/usr/include/bits/byteswap.h:
-
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
-
-VirtualCamManager_autogen/moc_predefs.h:
-
-/usr/include/bits/stdio_lim.h:
 
 /usr/include/c++/16/bits/stl_map.h:
 
@@ -2047,13 +2001,53 @@ VirtualCamManager_autogen/moc_predefs.h:
 
 /usr/include/qt6/QtGui/qaction.h:
 
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandXdgShellIntegrationPluginTargetsPrecheck.cmake:
+/usr/include/c++/16/backward/auto_ptr.h:
 
-/usr/include/bits/setjmp.h:
+/usr/include/bits/posix1_lim.h:
 
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h:
+/usr/include/c++/16/cctype:
 
-/usr/include/qt6/QtWidgets/qabstractscrollarea.h:
+/usr/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake:
+
+/usr/lib/cmake/Qt6Widgets/Qt6WidgetsTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
+
+/usr/include/qt6/QtGui/qtransform.h:
+
+/home/senu/Documents/VirtualCamManager/src/main.cpp:
+
+/usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake:
+
+/usr/include/c++/16/string_view:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake:
+
+/usr/include/bits/types/__fpos64_t.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/QString:
+
+/usr/include/qt6/QtCore/qfunctionpointer.h:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake:
+
+/home/senu/Documents/VirtualCamManager/CMakeLists.txt:
+
+/usr/include/sys/types.h:
+
+/usr/include/c++/16/bits/alloc_traits.h:
+
+/usr/include/bits/floatn-common.h:
+
+/usr/include/c++/16/bits/invoke.h:
+
+/usr/include/qt6/QtWidgets/qtabwidget.h:
 
 /usr/share/cmake/Modules/FindOpenGL.cmake:
 
@@ -2103,32 +2097,6 @@ CMakeFiles/4.4.2/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/16/version:
 
-/usr/include/bits/local_lim.h:
-
-/usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEglFSEmulatorIntegrationPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtCore/qtcoreexports.h:
-
-/usr/include/c++/16/bits/stream_iterator.h:
-
-/usr/include/bits/types/__mbstate_t.h:
-
-/usr/include/bits/timex.h:
-
-/usr/include/qt6/QtWidgets/QScrollArea:
-
-/usr/lib/cmake/Qt6Widgets/Qt6WidgetsTargetsPrecheck.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake:
-
-/usr/include/qt6/QtGui/qtransform.h:
-
-/home/senu/Documents/VirtualCamManager/src/main.cpp:
-
 /usr/lib/cmake/Qt6Gui/Qt6QMngPluginTargetsPrecheck.cmake:
 
 /usr/include/bits/types/clockid_t.h:
@@ -2140,6 +2108,8 @@ CMakeFiles/4.4.2/CMakeCXXCompiler.cmake:
 /usr/include/c++/16/bits/stl_heap.h:
 
 /usr/include/qt6/QtCore/qbytearray.h:
+
+/usr/include/bits/timex.h:
 
 /usr/include/bits/types.h:
 
@@ -2153,17 +2123,11 @@ CMakeFiles/4.4.2/CMakeCXXCompiler.cmake:
 
 /usr/include/linux/posix_types.h:
 
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake:
-
-/usr/include/qt6/QtCore/QObject:
-
 /usr/include/c++/16/tr1/beta_function.tcc:
 
 /usr/include/qt6/QtCore/q23utility.h:
 
 /usr/include/bits/types/__locale_t.h:
-
-/usr/include/qt6/QtWidgets/qlayoutitem.h:
 
 /usr/include/bits/types/__fpos_t.h:
 
@@ -2181,19 +2145,25 @@ CMakeFiles/4.4.2/CMakeCXXCompiler.cmake:
 
 /usr/include/ctype.h:
 
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
+
 /usr/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake:
 
 /usr/include/c++/16/tr1/modified_bessel_func.tcc:
 
 /usr/include/qt6/QtCore/qsystemdetection.h:
 
+/usr/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake:
+
+/usr/include/c++/16/bits/exception_ptr.h:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake:
+
 /usr/include/bits/types/mbstate_t.h:
 
 /usr/include/c++/16/bits/memory_resource.h:
 
 /usr/include/bits/types/sigset_t.h:
-
-/usr/include/qt6/QtWidgets/qgridlayout.h:
 
 /usr/include/c++/16/bits/std_abs.h:
 
@@ -2223,14 +2193,6 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/c++/16/backward/binders.h:
 
-/usr/include/c++/16/bits/ios_base.h:
-
-/usr/share/cmake/Modules/Internal/FeatureTesting.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtWidgets/qmainwindow.h:
-
 /usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake:
 
 /usr/include/c++/16/ext/type_traits.h:
@@ -2258,10 +2220,6 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 /usr/include/asm-generic/errno.h:
 
 /usr/include/sys/single_threaded.h:
-
-/usr/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake:
-
-/home/senu/Documents/VirtualCamManager/src/VideoItem.cpp:
 
 /usr/include/qt6/QtCore/qminmax.h:
 
@@ -2329,6 +2287,8 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
+/usr/lib/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake:
+
 /usr/include/c++/16/bits/functexcept.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginTargetsPrecheck.cmake:
@@ -2343,13 +2303,13 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/q20iterator.h:
 
-/usr/include/qt6/QtWidgets/qboxlayout.h:
-
 /usr/include/qt6/QtGui/qkeysequence.h:
 
 /usr/include/qt6/QtGui/qpixelformat.h:
 
 /usr/include/c++/16/bits/hashtable_policy.h:
+
+/usr/include/c++/16/variant:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargetsPrecheck.cmake:
 
@@ -2433,10 +2393,6 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/q20functional.h:
 
-/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake:
-
-/usr/include/qt6/QtCore/q20memory.h:
-
 /usr/include/c++/16/tr1/poly_hermite.tcc:
 
 /usr/include/qt6/QtGui/qimage.h:
@@ -2469,6 +2425,8 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qflags.h:
 
+/usr/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake:
+
 /usr/lib/cmake/Qt6Gui/Qt6DrmEglServerBufferPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/qt6/QtCore/qassert.h:
@@ -2485,13 +2443,11 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qbindingstorage.h:
 
+/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginAdditionalTargetInfo.cmake:
+
+/usr/include/qt6/QtCore/qbytearrayalgorithms.h:
+
 /usr/include/qt6/QtCore/qbytearraylist.h:
-
-/usr/include/c++/16/bits/stl_vector.h:
-
-/home/senu/Documents/VirtualCamManager/src/VideoItem.h:
-
-/usr/include/qt6/QtWidgets/QFrame:
 
 /usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake:
 
@@ -2593,6 +2549,8 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qmetacontainer.h:
 
+/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
+
 /usr/include/qt6/QtCore/qmetatype.h:
 
 /usr/share/cmake/Modules/CMakeDetermineSystem.cmake:
@@ -2679,6 +2637,8 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qtdeprecationmarkers.h:
 
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake:
+
 /usr/include/qt6/QtCore/qtenvironmentvariables.h:
 
 /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake:
@@ -2727,8 +2687,6 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qtversion.h:
 
-/usr/include/qt6/QtCore/qurl.h:
-
 /usr/include/c++/16/bits/stl_algobase.h:
 
 /usr/include/qt6/QtCore/qvarlengtharray.h:
@@ -2763,8 +2721,6 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake:
 
-/usr/include/qt6/QtGui/qpicture.h:
-
 /usr/bin/cmake:
 
 /usr/include/qt6/QtGui/qrgb.h:
@@ -2779,41 +2735,9 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/include/qt6/QtGui/qtguiglobal.h:
 
-/usr/include/bits/types/__FILE.h:
-
-/usr/include/qt6/QtWidgets/QLabel:
-
 /usr/lib/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginTargetsPrecheck.cmake:
 
 /usr/include/qt6/QtWidgets/QMainWindow:
-
-/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtWidgets/QPushButton:
-
-/usr/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake:
-
-/usr/include/c++/16/utility:
-
-/usr/include/qt6/QtWidgets/QVBoxLayout:
-
-/usr/include/bits/types/wint_t.h:
-
-/usr/include/qt6/QtWidgets/qabstractbutton.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginAdditionalTargetInfo.cmake:
-
-/usr/include/qt6/QtCore/qbytearrayalgorithms.h:
-
-/usr/include/qt6/QtWidgets/qframe.h:
-
-/usr/include/qt6/QtWidgets/qlabel.h:
-
-/usr/include/qt6/QtWidgets/qlayout.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
-
-/usr/include/qt6/QtWidgets/qpushbutton.h:
 
 /usr/include/qt6/QtWidgets/qtwidgetsexports.h:
 
@@ -2881,6 +2805,10 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicPluginHelpers.cmake:
 
+/usr/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake:
+
 /usr/lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake:
@@ -2918,3 +2846,27 @@ CMakeFiles/4.4.2/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreTargets.cmake:
+
+/home/senu/Documents/VirtualCamManager/src/VideoItem.cpp:
+
+/usr/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QWaylandQtShellIntegrationPluginConfig.cmake:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
+
+/usr/include/qt6/QtCore/QObject:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargetsPrecheck.cmake:
+
+/usr/include/qt6/QtCore/q20memory.h:
+
+/usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake:
+
+/usr/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:

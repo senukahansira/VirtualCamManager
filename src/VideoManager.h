@@ -10,14 +10,17 @@
 /*
  * VideoManager
  *
- * Responsibilities:
+ * This class manages:
  *
- * - Store videos
- * - Maximum 10 videos
- * - Add videos
- * - Remove videos
- * - Play a video
- * - Stop the current video
+ * - The list of videos
+ * - Which video is currently playing
+ * - Starting/stopping FFmpeg
+ *
+ * The GUI does not need to know how FFmpeg works.
+ *
+ * It simply tells VideoManager:
+ *
+ *     "Play this video."
  */
 class VideoManager : public QObject
 {
@@ -25,62 +28,71 @@ class VideoManager : public QObject
 
 public:
 
-    explicit VideoManager(QObject *parent = nullptr);
-
-    // Maximum number of videos.
+    // Maximum number of videos allowed.
     static constexpr int MAX_VIDEOS = 10;
 
-    // Add a video.
-    bool addVideo(const QString &filePath);
+    explicit VideoManager(QObject *parent = nullptr);
 
-    // Remove video at a specific index.
-    bool removeVideo(int index);
+    // Add a video to the list.
+    bool addVideo(const QString &path);
 
-    // Get number of videos.
-    int videoCount() const;
+    // Remove a video by index.
+    void removeVideo(int index);
 
-    // Get video at index.
-    VideoItem *videoAt(int index);
+    // Return all videos.
+    const QVector<VideoItem> &videos() const;
 
-    // Start playing a specific video.
-    void playVideo(int index);
+    // Return number of videos.
+    int count() const;
 
-    // Stop current video.
-    void stopVideo();
+    // Play a video at a specific index.
+    bool play(int index);
 
-    // Return index of currently playing video.
-    int currentVideoIndex() const;
+    // Stop the currently playing video.
+    void stop();
 
-    // Return true if FFmpeg is running.
+    // Check whether something is playing.
     bool isPlaying() const;
+
+    // Return currently playing index.
+    int currentIndex() const;
+
+    // Set the V4L2 device that FFmpeg should use.
+    void setCameraDevice(const QString &devicePath);
+
+    // Return current camera device.
+    QString cameraDevice() const;
 
 signals:
 
-    // Something changed in our video list.
+    // Video list changed.
     void videosChanged();
 
-    // Current video changed.
-    void currentVideoChanged(int index);
+    // A video started.
+    void videoStarted(int index);
 
-    // FFmpeg status message.
-    void statusMessage(const QString &message);
+    // Playback stopped.
+    void videoStopped();
 
-    // Error message.
-    void errorMessage(const QString &message);
+    // Error.
+    void errorOccurred(const QString &message);
+
+    // FFmpeg output.
+    void ffmpegOutput(const QString &output);
 
 private:
 
-    // List of our videos.
-    QVector<VideoItem*> m_videos;
+    // All videos.
+    QVector<VideoItem> m_videos;
 
-    // Controls FFmpeg.
-    FFmpegProcess m_ffmpeg;
+    // FFmpeg controller.
+    FFmpegProcess *m_ffmpeg;
 
-    // Index of currently playing video.
-    // -1 means no video is playing.
-    int m_currentVideoIndex;
+    // Currently playing video index.
+    int m_currentIndex;
 
-    Q_DISABLE_COPY(VideoManager)
+    // Current V4L2 camera device.
+    QString m_cameraDevice;
 };
 
 #endif // VIDEOMANAGER_H

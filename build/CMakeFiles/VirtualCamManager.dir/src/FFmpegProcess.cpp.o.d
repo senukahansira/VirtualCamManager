@@ -286,5 +286,4 @@ CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o: \
  /usr/include/qt6/QtCore/qprocess.h /usr/include/qt6/QtCore/qiodevice.h \
  /usr/include/qt6/QtCore/qspan.h /usr/include/c++/16/cassert \
  /usr/include/qt6/QtCore/q20iterator.h \
- /usr/include/qt6/QtCore/qshareddata.h /usr/include/qt6/QtCore/QString \
- /usr/include/qt6/QtCore/QProcessEnvironment
+ /usr/include/qt6/QtCore/qshareddata.h /usr/include/qt6/QtCore/QString

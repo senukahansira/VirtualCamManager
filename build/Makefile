@@ -275,6 +275,30 @@ src/VideoManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s
 .PHONY : src/VideoManager.cpp.s
 
+src/VirtualCameraManager.o: src/VirtualCameraManager.cpp.o
+.PHONY : src/VirtualCameraManager.o
+
+# target to build an object file
+src/VirtualCameraManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o
+.PHONY : src/VirtualCameraManager.cpp.o
+
+src/VirtualCameraManager.i: src/VirtualCameraManager.cpp.i
+.PHONY : src/VirtualCameraManager.i
+
+# target to preprocess a source file
+src/VirtualCameraManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.i
+.PHONY : src/VirtualCameraManager.cpp.i
+
+src/VirtualCameraManager.s: src/VirtualCameraManager.cpp.s
+.PHONY : src/VirtualCameraManager.s
+
+# target to generate assembly for a file
+src/VirtualCameraManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.s
+.PHONY : src/VirtualCameraManager.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -325,6 +349,9 @@ help:
 	@echo "... src/VideoManager.o"
 	@echo "... src/VideoManager.i"
 	@echo "... src/VideoManager.s"
+	@echo "... src/VirtualCameraManager.o"
+	@echo "... src/VirtualCameraManager.i"
+	@echo "... src/VirtualCameraManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

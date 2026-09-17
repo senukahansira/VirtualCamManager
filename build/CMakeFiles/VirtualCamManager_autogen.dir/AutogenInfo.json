@@ -638,6 +638,12 @@
 			"MU",
 			"UVLADIE3JM/moc_VideoManager.cpp",
 			null
+		],
+		[
+			"/home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.h",
+			"MU",
+			"UVLADIE3JM/moc_VirtualCameraManager.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -715,6 +721,11 @@
 		],
 		[
 			"/home/senu/Documents/VirtualCamManager/src/VideoManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp",
 			"MU",
 			null
 		],
