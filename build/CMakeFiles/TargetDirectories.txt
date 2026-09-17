@@ -1,0 +1,5 @@
+/home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager.dir
+/home/senu/Documents/VirtualCamManager/build/CMakeFiles/edit_cache.dir
+/home/senu/Documents/VirtualCamManager/build/CMakeFiles/rebuild_cache.dir
+/home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir
+/home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen.dir
