@@ -1,4 +1,5 @@
 # Virtual Camera Manager
+<img width="1166" height="681" alt="2026-09-17_15-25" src="https://github.com/user-attachments/assets/276ef1ce-0ba9-46f4-a376-c5cabdc93c85" />
 
 A simple Linux virtual camera manager written in C++ and Qt 6.
 
