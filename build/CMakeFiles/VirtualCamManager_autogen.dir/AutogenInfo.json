@@ -1,15 +1,15 @@
 {
-	"BUILD_DIR" : "/home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen",
-	"CMAKE_BINARY_DIR" : "/home/senu/Documents/VirtualCamManager/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/senu/Documents/VirtualCamManager/build",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/senu/Documents/VirtualCamManager",
+	"BUILD_DIR" : "/home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen",
+	"CMAKE_BINARY_DIR" : "/home/senu/Documents/VCM/VirtualCamManager2/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/senu/Documents/VCM/VirtualCamManager2/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/senu/Documents/VCM/VirtualCamManager2",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/senu/Documents/VirtualCamManager/CMakeLists.txt",
+		"/home/senu/Documents/VCM/VirtualCamManager2/CMakeLists.txt",
 		"/usr/share/cmake/Modules/CMakeDetermineSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeSystem.cmake.in",
-		"/home/senu/Documents/VirtualCamManager/build/CMakeFiles/4.4.2/CMakeSystem.cmake",
+		"/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/4.4.2/CMakeSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeUnixFindMake.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake",
@@ -66,7 +66,7 @@
 		"/usr/share/cmake/Modules/CMakeFindBinUtils.cmake",
 		"/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/senu/Documents/VirtualCamManager/build/CMakeFiles/4.4.2/CMakeCXXCompiler.cmake",
+		"/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/4.4.2/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake",
 		"/usr/share/cmake/Modules/CMakeGenericSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake",
@@ -92,7 +92,7 @@
 		"/usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake",
 		"/usr/share/cmake/Modules/Internal/FeatureTesting.cmake",
 		"/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/senu/Documents/VirtualCamManager/build/CMakeFiles/4.4.2/CMakeCXXCompiler.cmake",
+		"/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/4.4.2/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake",
 		"/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake",
 		"/usr/share/cmake/Modules/Linker/GNU-CXX.cmake",
@@ -607,48 +607,55 @@
 		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake",
 		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
-		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake"
+		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"/home/senu/Documents/VCM/VirtualCamManager2/resources/resources.qrc"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/senu/Documents/VirtualCamManager",
+	"CMAKE_SOURCE_DIR" : "/home/senu/Documents/VCM/VirtualCamManager2",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "/home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/deps",
+	"DEP_FILE" : "/home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "VirtualCamManager_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/home/senu/Documents/VirtualCamManager/src/FFmpegProcess.h",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.h",
 			"MU",
 			"UVLADIE3JM/moc_FFmpegProcess.cpp",
 			null
 		],
 		[
-			"/home/senu/Documents/VirtualCamManager/src/MainWindow.h",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.h",
+			"MU",
+			"UVLADIE3JM/moc_HardwareAcceleration.cpp",
+			null
+		],
+		[
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.h",
 			"MU",
 			"UVLADIE3JM/moc_MainWindow.cpp",
 			null
 		],
 		[
-			"/home/senu/Documents/VirtualCamManager/src/VideoItem.h",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.h",
+			"MU",
+			"UVLADIE3JM/moc_ThumbnailGenerator.cpp",
+			null
+		],
+		[
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.h",
 			"MU",
 			"UVLADIE3JM/moc_VideoItem.cpp",
 			null
 		],
 		[
-			"/home/senu/Documents/VirtualCamManager/src/VideoManager.h",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.h",
 			"MU",
 			"UVLADIE3JM/moc_VideoManager.cpp",
-			null
-		],
-		[
-			"/home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.h",
-			"MU",
-			"UVLADIE3JM/moc_VirtualCameraManager.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -685,51 +692,60 @@
 	"MOC_PREDEFS_CMD" : 
 	[
 		"/usr/bin/c++",
-		"-std=gnu++17",
+		"-std=c++17",
 		"-w",
 		"-dM",
 		"-E",
 		"/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 2,
-	"PARSE_CACHE_FILE" : "/home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt6/uic",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 11,
-	"SETTINGS_FILE" : "/home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/senu/Documents/VirtualCamManager/src/FFmpegProcess.cpp",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/senu/Documents/VirtualCamManager/src/MainWindow.cpp",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/senu/Documents/VirtualCamManager/src/VideoItem.cpp",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/senu/Documents/VirtualCamManager/src/VideoManager.cpp",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp",
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.cpp",
 			"MU",
 			null
 		],
-		[ "/home/senu/Documents/VirtualCamManager/src/main.cpp", "MU", null ]
+		[
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/senu/Documents/VCM/VirtualCamManager2/src/main.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

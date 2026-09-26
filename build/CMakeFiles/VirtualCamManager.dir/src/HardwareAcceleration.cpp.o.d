@@ -1,10 +1,9 @@
-CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: \
- /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp \
+CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o: \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.cpp \
  /usr/include/stdc-predef.h \
- /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.h \
- /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
- /usr/include/qt6/QtCore/qobjectdefs.h \
- /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qglobal.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.h \
+ /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/qstring.h \
+ /usr/include/qt6/QtCore/qchar.h /usr/include/qt6/QtCore/qglobal.h \
  /usr/include/c++/16/type_traits \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -167,21 +166,31 @@ CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: \
  /usr/include/c++/16/bits/stl_vector.h \
  /usr/include/c++/16/bits/stl_bvector.h \
  /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/array \
- /usr/include/c++/16/compare /usr/include/qt6/QtCore/qtmetamacros.h \
- /usr/include/qt6/QtCore/qobjectdefs_impl.h \
- /usr/include/qt6/QtCore/qfunctionaltools_impl.h \
- /usr/include/c++/16/memory \
- /usr/include/c++/16/bits/stl_raw_storage_iter.h \
- /usr/include/c++/16/bits/align.h /usr/include/c++/16/bits/unique_ptr.h \
- /usr/include/c++/16/bits/shared_ptr.h /usr/include/c++/16/iosfwd \
- /usr/include/c++/16/bits/stringfwd.h /usr/include/c++/16/bits/postypes.h \
- /usr/include/c++/16/cwchar /usr/include/wchar.h \
+ /usr/include/c++/16/compare /usr/include/qt6/QtCore/qstringview.h \
+ /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
+ /usr/include/qt6/QtCore/qnamespace.h \
+ /usr/include/qt6/QtCore/qtmetamacros.h \
+ /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/qt6/QtCore/qarraydatapointer.h \
+ /usr/include/qt6/QtCore/qarraydataops.h \
+ /usr/include/qt6/QtCore/qcontainertools_impl.h \
+ /usr/include/qt6/QtCore/qxptype_traits.h \
+ /usr/include/qt6/QtCore/q23type_traits.h /usr/include/c++/16/cstring \
+ /usr/include/c++/16/iterator /usr/include/c++/16/bits/stream_iterator.h \
+ /usr/include/c++/16/iosfwd /usr/include/c++/16/bits/stringfwd.h \
+ /usr/include/c++/16/bits/postypes.h /usr/include/c++/16/cwchar \
+ /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \
  /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h \
- /usr/include/c++/16/bits/shared_ptr_base.h \
- /usr/include/c++/16/bits/allocated_ptr.h \
+ /usr/include/c++/16/bits/streambuf_iterator.h \
+ /usr/include/c++/16/streambuf /usr/include/c++/16/bits/localefwd.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/16/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/16/cctype \
+ /usr/include/ctype.h /usr/include/c++/16/bits/ios_base.h \
  /usr/include/c++/16/ext/atomicity.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
@@ -199,27 +208,7 @@ CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h /usr/include/c++/16/ext/concurrence.h \
- /usr/include/c++/16/bits/shared_ptr_atomic.h \
- /usr/include/c++/16/backward/auto_ptr.h \
- /usr/include/c++/16/pstl/glue_memory_defs.h \
- /usr/include/qt6/QtCore/qstring.h /usr/include/qt6/QtCore/qchar.h \
- /usr/include/qt6/QtCore/qstringview.h \
- /usr/include/qt6/QtCore/qbytearray.h /usr/include/qt6/QtCore/qrefcount.h \
- /usr/include/qt6/QtCore/qarraydata.h /usr/include/qt6/QtCore/qpair.h \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/qt6/QtCore/qarraydatapointer.h \
- /usr/include/qt6/QtCore/qarraydataops.h \
- /usr/include/qt6/QtCore/qcontainertools_impl.h \
- /usr/include/qt6/QtCore/qxptype_traits.h \
- /usr/include/qt6/QtCore/q23type_traits.h /usr/include/c++/16/cstring \
- /usr/include/c++/16/iterator /usr/include/c++/16/bits/stream_iterator.h \
- /usr/include/c++/16/bits/streambuf_iterator.h \
- /usr/include/c++/16/streambuf /usr/include/c++/16/bits/localefwd.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
- /usr/include/c++/16/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/16/cctype \
- /usr/include/ctype.h /usr/include/c++/16/bits/ios_base.h \
+ /usr/include/sys/single_threaded.h \
  /usr/include/c++/16/bits/locale_classes.h /usr/include/c++/16/string \
  /usr/include/c++/16/bits/char_traits.h \
  /usr/include/c++/16/bits/ostream_insert.h \
@@ -242,7 +231,16 @@ CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h \
  /usr/include/c++/16/stdexcept \
  /usr/include/c++/16/bits/stdexcept_except.h \
- /usr/include/c++/16/bits/streambuf.tcc \
+ /usr/include/c++/16/bits/streambuf.tcc /usr/include/c++/16/memory \
+ /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/16/bits/align.h /usr/include/c++/16/bits/unique_ptr.h \
+ /usr/include/c++/16/bits/shared_ptr.h \
+ /usr/include/c++/16/bits/shared_ptr_base.h \
+ /usr/include/c++/16/bits/allocated_ptr.h \
+ /usr/include/c++/16/ext/concurrence.h \
+ /usr/include/c++/16/bits/shared_ptr_atomic.h \
+ /usr/include/c++/16/backward/auto_ptr.h \
+ /usr/include/c++/16/pstl/glue_memory_defs.h \
  /usr/include/qt6/QtCore/q20functional.h \
  /usr/include/qt6/QtCore/q20memory.h /usr/include/qt6/QtCore/q17memory.h \
  /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
@@ -256,20 +254,25 @@ CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: \
  /usr/include/qt6/QtCore/qstringbuilder.h \
  /usr/include/qt6/QtCore/qstringconverter.h \
  /usr/include/qt6/QtCore/qstringconverter_base.h \
- /usr/include/qt6/QtCore/qlist.h /usr/include/qt6/QtCore/qhashfunctions.h \
- /usr/include/c++/16/numeric /usr/include/c++/16/bits/stl_numeric.h \
+ /usr/include/qt6/QtCore/QStringList \
+ /usr/include/qt6/QtCore/qstringlist.h /usr/include/qt6/QtCore/qlist.h \
+ /usr/include/qt6/QtCore/qhashfunctions.h /usr/include/c++/16/numeric \
+ /usr/include/c++/16/bits/stl_numeric.h \
  /usr/include/c++/16/pstl/glue_numeric_defs.h \
  /usr/include/qt6/QtCore/qiterator.h \
  /usr/include/qt6/QtCore/qbytearraylist.h \
- /usr/include/qt6/QtCore/qstringlist.h \
  /usr/include/qt6/QtCore/qalgorithms.h /usr/include/qt6/QtCore/q20bit.h \
  /usr/include/qt6/QtCore/qstringmatcher.h \
+ /usr/include/qt6/QtCore/QProcess /usr/include/qt6/QtCore/qprocess.h \
+ /usr/include/qt6/QtCore/qiodevice.h \
+ /usr/include/qt6/QtCore/qiodevicebase.h \
+ /usr/include/qt6/QtCore/qobject.h /usr/include/qt6/QtCore/qobjectdefs.h \
+ /usr/include/qt6/QtCore/qobjectdefs_impl.h \
+ /usr/include/qt6/QtCore/qfunctionaltools_impl.h \
  /usr/include/qt6/QtCore/qscopedpointer.h \
  /usr/include/qt6/QtCore/qmetatype.h \
- /usr/include/qt6/QtCore/qdatastream.h \
- /usr/include/qt6/QtCore/qiodevicebase.h \
- /usr/include/qt6/QtCore/qfloat16.h /usr/include/qt6/QtCore/qmath.h \
- /usr/include/qt6/QtCore/qtformat_impl.h \
+ /usr/include/qt6/QtCore/qdatastream.h /usr/include/qt6/QtCore/qfloat16.h \
+ /usr/include/qt6/QtCore/qmath.h /usr/include/qt6/QtCore/qtformat_impl.h \
  /usr/include/qt6/QtCore/qiterable.h \
  /usr/include/qt6/QtCore/qtaggedpointer.h \
  /usr/include/qt6/QtCore/qmetacontainer.h \
@@ -282,73 +285,6 @@ CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: \
  /usr/include/qt6/QtCore/qobject_impl.h \
  /usr/include/qt6/QtCore/qbindingstorage.h /usr/include/c++/16/chrono \
  /usr/include/c++/16/bits/chrono.h /usr/include/c++/16/ratio \
- /usr/include/c++/16/ctime /usr/include/qt6/QtCore/QString \
- /usr/include/qt6/QtCore/QDir /usr/include/qt6/QtCore/qdir.h \
- /usr/include/qt6/QtCore/qdirlisting.h \
- /usr/include/qt6/QtCore/qfiledevice.h \
- /usr/include/qt6/QtCore/qiodevice.h /usr/include/qt6/QtCore/qspan.h \
+ /usr/include/c++/16/ctime /usr/include/qt6/QtCore/qspan.h \
  /usr/include/c++/16/cassert /usr/include/qt6/QtCore/q20iterator.h \
- /usr/include/c++/16/filesystem /usr/include/c++/16/bits/fs_fwd.h \
- /usr/include/c++/16/bits/fs_path.h /usr/include/c++/16/locale \
- /usr/include/c++/16/bits/locale_facets.h /usr/include/c++/16/cwctype \
- /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/16/bits/locale_facets.tcc \
- /usr/include/c++/16/bits/locale_facets_nonio.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/16/bits/codecvt.h \
- /usr/include/c++/16/bits/locale_facets_nonio.tcc \
- /usr/include/c++/16/bits/locale_conv.h /usr/include/c++/16/iomanip \
- /usr/include/c++/16/bits/quoted_string.h /usr/include/c++/16/sstream \
- /usr/include/c++/16/istream /usr/include/c++/16/ios \
- /usr/include/c++/16/bits/basic_ios.h \
- /usr/include/c++/16/bits/basic_ios.tcc /usr/include/c++/16/ostream \
- /usr/include/c++/16/bits/ostream.h \
- /usr/include/c++/16/bits/ostream_print.h \
- /usr/include/c++/16/bits/ostream.tcc \
- /usr/include/c++/16/bits/istream.tcc \
- /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/codecvt \
- /usr/include/c++/16/bits/fs_dir.h /usr/include/c++/16/bits/fs_ops.h \
- /usr/include/qt6/QtCore/qdatetime.h /usr/include/qt6/QtCore/qcalendar.h \
- /usr/include/qt6/QtCore/qlocale.h /usr/include/qt6/QtCore/qvariant.h \
- /usr/include/qt6/QtCore/qdebug.h /usr/include/qt6/QtCore/qtextstream.h \
- /usr/include/qt6/QtCore/qcontiguouscache.h /usr/include/c++/16/climits \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/qt6/QtCore/qsharedpointer.h \
- /usr/include/qt6/QtCore/qshareddata.h \
- /usr/include/qt6/QtCore/qsharedpointer_impl.h /usr/include/c++/16/set \
- /usr/include/c++/16/bits/stl_set.h \
- /usr/include/c++/16/bits/stl_multiset.h \
- /usr/include/c++/16/unordered_set \
- /usr/include/c++/16/bits/unordered_set.h /usr/include/qt6/QtCore/qmap.h \
- /usr/include/qt6/QtCore/qshareddata_impl.h \
- /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
- /usr/include/qt6/QtCore/qvarlengtharray.h \
- /usr/include/qt6/QtCore/qalloc.h /usr/include/qt6/QtCore/q23utility.h \
- /usr/include/qt6/QtCore/q20utility.h /usr/include/qt6/QtCore/qfile.h \
- /usr/include/qt6/QtCore/qfileinfo.h /usr/include/qt6/QtCore/qtimezone.h \
- /usr/include/qt6/QtCore/QFileInfo /usr/include/qt6/QtCore/QDebug \
- /usr/include/fcntl.h /usr/include/bits/fcntl.h \
- /usr/include/bits/fcntl-linux.h /usr/include/bits/types/struct_iovec.h \
- /usr/include/bits/cloexec.h /usr/include/linux/falloc.h \
- /usr/include/linux/openat2.h /usr/include/bits/openat2.h \
- /usr/include/bits/stat.h /usr/include/bits/struct_stat.h \
- /usr/include/unistd.h /usr/include/bits/posix_opt.h \
- /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
- /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
- /usr/include/sys/ioctl.h /usr/include/bits/ioctls.h \
- /usr/include/asm/ioctls.h /usr/include/asm-generic/ioctls.h \
- /usr/include/linux/ioctl.h /usr/include/asm/ioctl.h \
- /usr/include/asm-generic/ioctl.h /usr/include/linux/sockios.h \
- /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
- /usr/include/bits/ioctl-types.h /usr/include/sys/ttydefaults.h \
- /usr/include/linux/videodev2.h /usr/include/sys/time.h \
- /usr/include/linux/v4l2-common.h /usr/include/linux/v4l2-controls.h \
- /usr/include/linux/const.h
+ /usr/include/qt6/QtCore/qshareddata.h

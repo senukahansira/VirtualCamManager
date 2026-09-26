@@ -1,7 +1,7 @@
 CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o: \
- /home/senu/Documents/VirtualCamManager/src/MainWindow.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.cpp \
  /usr/include/stdc-predef.h \
- /home/senu/Documents/VirtualCamManager/src/MainWindow.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -329,15 +329,46 @@ CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o: \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /home/senu/Documents/VirtualCamManager/src/VideoManager.h \
+ /usr/include/qt6/QtWidgets/QVBoxLayout \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtWidgets/qlayout.h \
+ /usr/include/qt6/QtWidgets/qlayoutitem.h \
+ /usr/include/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/qt6/QtWidgets/QHBoxLayout /usr/include/qt6/QtWidgets/QLabel \
+ /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtWidgets/qframe.h \
+ /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtCore/qiodevice.h \
+ /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
+ /usr/include/qt6/QtWidgets/QPushButton \
+ /usr/include/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/qt6/QtWidgets/QScrollArea \
+ /usr/include/qt6/QtWidgets/qscrollarea.h \
+ /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt6/QtWidgets/QSlider /usr/include/qt6/QtWidgets/qslider.h \
+ /usr/include/qt6/QtWidgets/qabstractslider.h \
+ /usr/include/qt6/QtWidgets/QComboBox \
+ /usr/include/qt6/QtWidgets/qcombobox.h \
+ /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt6/QtWidgets/qstyleoption.h \
+ /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtWidgets/qabstractspinbox.h \
+ /usr/include/qt6/QtGui/qvalidator.h \
+ /usr/include/qt6/QtCore/qregularexpression.h \
+ /usr/include/qt6/QtWidgets/qstyle.h /usr/include/qt6/QtWidgets/qtabbar.h \
+ /usr/include/qt6/QtWidgets/qrubberband.h \
+ /usr/include/qt6/QtCore/qabstractitemmodel.h \
+ /usr/include/qt6/QtWidgets/QCheckBox \
+ /usr/include/qt6/QtWidgets/qcheckbox.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/QVector \
  /usr/include/qt6/QtCore/qvector.h \
- /home/senu/Documents/VirtualCamManager/src/VideoItem.h \
- /usr/include/qt6/QtCore/QString \
- /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.h \
+ /usr/include/qt6/QtCore/QString /usr/include/qt6/QtGui/QPixmap \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.h \
  /usr/include/qt6/QtCore/QProcess /usr/include/qt6/QtCore/qprocess.h \
- /usr/include/qt6/QtCore/qiodevice.h \
- /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.h \
+ /usr/include/qt6/QtCore/QStringList \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.h \
  /usr/include/qt6/QtWidgets/QFileDialog \
  /usr/include/qt6/QtWidgets/qfiledialog.h /usr/include/qt6/QtCore/qdir.h \
  /usr/include/qt6/QtCore/qdirlisting.h \
@@ -366,25 +397,10 @@ CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o: \
  /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/codecvt \
  /usr/include/c++/16/bits/fs_dir.h /usr/include/c++/16/bits/fs_ops.h \
  /usr/include/qt6/QtCore/qdatetime.h /usr/include/qt6/QtCore/qcalendar.h \
- /usr/include/qt6/QtCore/qlocale.h /usr/include/qt6/QtCore/qfile.h \
- /usr/include/qt6/QtCore/qfileinfo.h /usr/include/qt6/QtCore/qtimezone.h \
- /usr/include/qt6/QtCore/qurl.h /usr/include/qt6/QtWidgets/qdialog.h \
- /usr/include/qt6/QtWidgets/QHBoxLayout \
- /usr/include/qt6/QtWidgets/qboxlayout.h \
- /usr/include/qt6/QtWidgets/qlayout.h \
- /usr/include/qt6/QtWidgets/qlayoutitem.h \
- /usr/include/qt6/QtWidgets/qgridlayout.h \
- /usr/include/qt6/QtWidgets/QLabel /usr/include/qt6/QtWidgets/qlabel.h \
- /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtGui/qpicture.h \
- /usr/include/qt6/QtGui/qtextdocument.h \
+ /usr/include/qt6/QtCore/qfile.h /usr/include/qt6/QtCore/qfileinfo.h \
+ /usr/include/qt6/QtCore/qtimezone.h /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtWidgets/QMessageBox \
  /usr/include/qt6/QtWidgets/qmessagebox.h \
  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
- /usr/include/qt6/QtWidgets/QPushButton \
- /usr/include/qt6/QtWidgets/qpushbutton.h \
- /usr/include/qt6/QtWidgets/qabstractbutton.h \
- /usr/include/qt6/QtWidgets/QScrollArea \
- /usr/include/qt6/QtWidgets/qscrollarea.h \
- /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
- /usr/include/qt6/QtWidgets/QVBoxLayout \
- /usr/include/qt6/QtWidgets/QWidget
+ /usr/include/qt6/QtWidgets/QFrame /usr/include/qt6/QtGui/QFont \
+ /usr/include/qt6/QtWidgets/QSizePolicy

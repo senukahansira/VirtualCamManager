@@ -3,19 +3,9 @@
 
 #include <QObject>
 #include <QProcess>
-#include <QString>
 
-/*
- * FFmpegProcess
- *
- * This class is responsible ONLY for starting and stopping FFmpeg.
- *
- * It does not manage the video list.
- * It does not manage the GUI.
- * It simply says:
- *
- *     "Run this video through FFmpeg into this V4L2 device."
- */
+#include "HardwareAcceleration.h"
+
 class FFmpegProcess : public QObject
 {
     Q_OBJECT
@@ -23,33 +13,59 @@ class FFmpegProcess : public QObject
 public:
     explicit FFmpegProcess(QObject *parent = nullptr);
 
-    // Start playing a video into the specified V4L2 device.
-    void start(const QString &videoPath, const QString &devicePath);
+    void start(
+        const QString &videoPath,
+        qint64 startPositionMs = 0
+    );
 
-    // Stop the currently running FFmpeg process.
     void stop();
+    void pause();
+    void resume();
+    void seek(qint64 positionMs);
 
-    // Returns true if FFmpeg is currently running.
+    void setLoop(bool loop);
+
+    void setHardwareAcceleration(
+        HardwareAcceleration::Method method
+    );
+
     bool isRunning() const;
+    bool isPaused() const;
+
+    qint64 positionMs() const;
+    qint64 durationMs() const;
 
 signals:
-
-    // Emitted when FFmpeg starts successfully.
     void started();
-
-    // Emitted when FFmpeg stops.
     void stopped();
+    void paused();
+    void resumed();
 
-    // Emitted when FFmpeg reports an error.
+    void positionChanged(qint64 positionMs);
+    void durationChanged(qint64 durationMs);
+
     void errorOccurred(const QString &message);
-
-    // Emitted when FFmpeg prints output.
-    void outputReceived(const QString &output);
+    void logMessage(const QString &message);
 
 private:
+    void buildAndStartProcess();
+    void parseFFmpegOutput(const QString &text);
+    QStringList createArguments() const;
+    QString createVideoFilter() const;
 
-    // QProcess is Qt's way of starting and controlling another program.
-    QProcess *m_process;
+    QProcess m_process;
+
+    QString m_videoPath;
+    QString m_outputDevice;
+
+    qint64 m_positionMs;
+    qint64 m_durationMs;
+    qint64 m_startPositionMs;
+
+    bool m_loop;
+    bool m_paused;
+
+    HardwareAcceleration::Method m_hardwareAcceleration;
 };
 
-#endif // FFMPEGPROCESS_H
+#endif

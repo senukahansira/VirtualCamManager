@@ -1,7 +1,7 @@
 CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o: \
- /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.cpp \
  /usr/include/stdc-predef.h \
- /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/qobjectdefs.h \
  /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qglobal.h \
@@ -286,4 +286,27 @@ CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o: \
  /usr/include/qt6/QtCore/qprocess.h /usr/include/qt6/QtCore/qiodevice.h \
  /usr/include/qt6/QtCore/qspan.h /usr/include/c++/16/cassert \
  /usr/include/qt6/QtCore/q20iterator.h \
- /usr/include/qt6/QtCore/qshareddata.h /usr/include/qt6/QtCore/QString
+ /usr/include/qt6/QtCore/qshareddata.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.h \
+ /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/QStringList \
+ /usr/include/qt6/QtCore/QRegularExpression \
+ /usr/include/qt6/QtCore/qregularexpression.h \
+ /usr/include/qt6/QtCore/qvariant.h /usr/include/qt6/QtCore/qdebug.h \
+ /usr/include/qt6/QtCore/qtextstream.h \
+ /usr/include/qt6/QtCore/qcontiguouscache.h /usr/include/c++/16/climits \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/qt6/QtCore/qsharedpointer.h \
+ /usr/include/qt6/QtCore/qsharedpointer_impl.h /usr/include/c++/16/set \
+ /usr/include/c++/16/bits/stl_set.h \
+ /usr/include/c++/16/bits/stl_multiset.h \
+ /usr/include/c++/16/unordered_set \
+ /usr/include/c++/16/bits/unordered_set.h /usr/include/qt6/QtCore/qmap.h \
+ /usr/include/qt6/QtCore/qshareddata_impl.h \
+ /usr/include/qt6/QtCore/qset.h /usr/include/qt6/QtCore/qhash.h \
+ /usr/include/qt6/QtCore/qvarlengtharray.h \
+ /usr/include/qt6/QtCore/qalloc.h /usr/include/qt6/QtCore/q23utility.h \
+ /usr/include/qt6/QtCore/q20utility.h

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/senu/Documents/VirtualCamManager
+CMAKE_SOURCE_DIR = /home/senu/Documents/VCM/VirtualCamManager2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/senu/Documents/VirtualCamManager/build
+CMAKE_BINARY_DIR = /home/senu/Documents/VCM/VirtualCamManager2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/VirtualCamManager.dir/depend.make
@@ -72,9 +72,16 @@ include CMakeFiles/VirtualCamManager.dir/flags.make
 VirtualCamManager_autogen/timestamp: /usr/lib/qt6/moc
 VirtualCamManager_autogen/timestamp: /usr/lib/qt6/uic
 VirtualCamManager_autogen/timestamp: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target VirtualCamManager"
-	/usr/bin/cmake -E cmake_autogen /home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen.dir/AutogenInfo.json ""
-	/usr/bin/cmake -E touch /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target VirtualCamManager"
+	/usr/bin/cmake -E cmake_autogen /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/timestamp
+
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp: /home/senu/Documents/VCM/VirtualCamManager2/resources/resources.qrc
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp: CMakeFiles/VirtualCamManager_autogen.dir/AutoRcc_resources_3YJK5W5UP7_Info.json
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp: /usr/lib/qt6/rcc
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp: /usr/lib/qt6/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources/resources.qrc"
+	/usr/bin/cmake -E cmake_autorcc /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager_autogen.dir/AutoRcc_resources_3YJK5W5UP7_Info.json 
 
 CMakeFiles/VirtualCamManager.dir/codegen:
 .PHONY : CMakeFiles/VirtualCamManager.dir/codegen
@@ -82,110 +89,140 @@ CMakeFiles/VirtualCamManager.dir/codegen:
 CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
 CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o: VirtualCamManager_autogen/mocs_compilation.cpp
 CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o -MF CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o -c /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o -MF CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/mocs_compilation.cpp
 
 CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/mocs_compilation.cpp > CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/mocs_compilation.cpp > CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/mocs_compilation.cpp -o CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/mocs_compilation.cpp -o CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/VirtualCamManager.dir/src/main.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
-CMakeFiles/VirtualCamManager.dir/src/main.cpp.o: /home/senu/Documents/VirtualCamManager/src/main.cpp
+CMakeFiles/VirtualCamManager.dir/src/main.cpp.o: /home/senu/Documents/VCM/VirtualCamManager2/src/main.cpp
 CMakeFiles/VirtualCamManager.dir/src/main.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/main.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/main.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/main.cpp.o -c /home/senu/Documents/VirtualCamManager/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/main.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/main.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/main.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/src/main.cpp
 
 CMakeFiles/VirtualCamManager.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VirtualCamManager/src/main.cpp > CMakeFiles/VirtualCamManager.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/src/main.cpp > CMakeFiles/VirtualCamManager.dir/src/main.cpp.i
 
 CMakeFiles/VirtualCamManager.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VirtualCamManager/src/main.cpp -o CMakeFiles/VirtualCamManager.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/src/main.cpp -o CMakeFiles/VirtualCamManager.dir/src/main.cpp.s
 
 CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
-CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o: /home/senu/Documents/VirtualCamManager/src/MainWindow.cpp
+CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o: /home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.cpp
 CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o -c /home/senu/Documents/VirtualCamManager/src/MainWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.cpp
 
 CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VirtualCamManager/src/MainWindow.cpp > CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.cpp > CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.i
 
 CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VirtualCamManager/src/MainWindow.cpp -o CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.s
-
-CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
-CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o: /home/senu/Documents/VirtualCamManager/src/VideoManager.cpp
-CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o -c /home/senu/Documents/VirtualCamManager/src/VideoManager.cpp
-
-CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VirtualCamManager/src/VideoManager.cpp > CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.i
-
-CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VirtualCamManager/src/VideoManager.cpp -o CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.cpp -o CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.s
 
 CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
-CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o: /home/senu/Documents/VirtualCamManager/src/VideoItem.cpp
+CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o: /home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.cpp
 CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o -c /home/senu/Documents/VirtualCamManager/src/VideoItem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.cpp
 
 CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VirtualCamManager/src/VideoItem.cpp > CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.cpp > CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.i
 
 CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VirtualCamManager/src/VideoItem.cpp -o CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.cpp -o CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.s
+
+CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
+CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o: /home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.cpp
+CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.cpp
+
+CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.cpp > CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.i
+
+CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.cpp -o CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s
 
 CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
-CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o: /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.cpp
+CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o: /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.cpp
 CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o -c /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.cpp
 
 CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.cpp > CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.cpp > CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.i
 
 CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.cpp -o CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.cpp -o CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.s
 
-CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
-CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp
-CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o -c /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp
+CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
+CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o: /home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.cpp
+CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.cpp
 
-CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp > CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.i
+CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.cpp > CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.i
 
-CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VirtualCamManager/src/VirtualCameraManager.cpp -o CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.s
+CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.cpp -o CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.s
+
+CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
+CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o: /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.cpp
+CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o -MF CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.cpp
+
+CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.cpp > CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.i
+
+CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.cpp -o CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.s
+
+CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o: CMakeFiles/VirtualCamManager.dir/flags.make
+CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o: VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp
+CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o -MF CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o.d -o CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o -c /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp
+
+CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp > CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.i
+
+CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp -o CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.s
 
 # Object files for target VirtualCamManager
 VirtualCamManager_OBJECTS = \
 "CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/VirtualCamManager.dir/src/main.cpp.o" \
 "CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o" \
-"CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o" \
 "CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o" \
+"CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o" \
 "CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o" \
-"CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o"
+"CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o" \
+"CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o" \
+"CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o"
 
 # External object files for target VirtualCamManager
 VirtualCamManager_EXTERNAL_OBJECTS =
@@ -193,10 +230,12 @@ VirtualCamManager_EXTERNAL_OBJECTS =
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/main.cpp.o
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o
-VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o
+VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o
-VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o
+VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o
+VirtualCamManager: CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o
+VirtualCamManager: CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/build.make
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/compiler_depend.ts
 VirtualCamManager: /usr/lib/libQt6Widgets.so.6.11.1
@@ -205,7 +244,7 @@ VirtualCamManager: /usr/lib/libGLX.so
 VirtualCamManager: /usr/lib/libOpenGL.so
 VirtualCamManager: /usr/lib/libQt6Core.so.6.11.1
 VirtualCamManager: CMakeFiles/VirtualCamManager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable VirtualCamManager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable VirtualCamManager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VirtualCamManager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -216,7 +255,8 @@ CMakeFiles/VirtualCamManager.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/VirtualCamManager.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/VirtualCamManager.dir/clean
 
+CMakeFiles/VirtualCamManager.dir/depend: VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp
 CMakeFiles/VirtualCamManager.dir/depend: VirtualCamManager_autogen/timestamp
-	cd /home/senu/Documents/VirtualCamManager/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/senu/Documents/VirtualCamManager /home/senu/Documents/VirtualCamManager /home/senu/Documents/VirtualCamManager/build /home/senu/Documents/VirtualCamManager/build /home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager.dir/DependInfo.cmake "--color=$(COLOR)" VirtualCamManager
+	cd /home/senu/Documents/VCM/VirtualCamManager2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/senu/Documents/VCM/VirtualCamManager2 /home/senu/Documents/VCM/VirtualCamManager2 /home/senu/Documents/VCM/VirtualCamManager2/build /home/senu/Documents/VCM/VirtualCamManager2/build /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager.dir/DependInfo.cmake "--color=$(COLOR)" VirtualCamManager
 .PHONY : CMakeFiles/VirtualCamManager.dir/depend
 

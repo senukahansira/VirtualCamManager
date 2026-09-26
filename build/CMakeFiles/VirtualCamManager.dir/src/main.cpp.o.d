@@ -1,5 +1,5 @@
 CMakeFiles/VirtualCamManager.dir/src/main.cpp.o: \
- /home/senu/Documents/VirtualCamManager/src/main.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/main.cpp \
  /usr/include/stdc-predef.h /usr/include/qt6/QtWidgets/QApplication \
  /usr/include/qt6/QtWidgets/qapplication.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -331,7 +331,7 @@ CMakeFiles/VirtualCamManager.dir/src/main.cpp.o: \
  /usr/include/qt6/QtCore/qvarlengtharray.h \
  /usr/include/qt6/QtCore/qalloc.h \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
- /home/senu/Documents/VirtualCamManager/src/MainWindow.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/MainWindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qwidget.h /usr/include/qt6/QtGui/qaction.h \
@@ -341,4 +341,43 @@ CMakeFiles/VirtualCamManager.dir/src/main.cpp.o: \
  /usr/include/qt6/QtGui/qfontmetrics.h /usr/include/qt6/QtGui/qfontinfo.h \
  /usr/include/qt6/QtGui/qfontvariableaxis.h \
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
- /usr/include/qt6/QtWidgets/qtabwidget.h
+ /usr/include/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/qt6/QtWidgets/QVBoxLayout \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtWidgets/qlayout.h \
+ /usr/include/qt6/QtWidgets/qlayoutitem.h \
+ /usr/include/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/qt6/QtWidgets/QHBoxLayout /usr/include/qt6/QtWidgets/QLabel \
+ /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtWidgets/qframe.h \
+ /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtCore/qiodevice.h \
+ /usr/include/qt6/QtGui/qtextdocument.h /usr/include/qt6/QtCore/qurl.h \
+ /usr/include/qt6/QtWidgets/QPushButton \
+ /usr/include/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/qt6/QtWidgets/QScrollArea \
+ /usr/include/qt6/QtWidgets/qscrollarea.h \
+ /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt6/QtWidgets/QSlider /usr/include/qt6/QtWidgets/qslider.h \
+ /usr/include/qt6/QtWidgets/qabstractslider.h \
+ /usr/include/qt6/QtWidgets/QComboBox \
+ /usr/include/qt6/QtWidgets/qcombobox.h \
+ /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt6/QtWidgets/qstyleoption.h \
+ /usr/include/qt6/QtWidgets/qabstractspinbox.h \
+ /usr/include/qt6/QtGui/qvalidator.h \
+ /usr/include/qt6/QtCore/qregularexpression.h \
+ /usr/include/qt6/QtWidgets/qstyle.h /usr/include/qt6/QtWidgets/qtabbar.h \
+ /usr/include/qt6/QtWidgets/qrubberband.h \
+ /usr/include/qt6/QtCore/qabstractitemmodel.h \
+ /usr/include/qt6/QtWidgets/QCheckBox \
+ /usr/include/qt6/QtWidgets/qcheckbox.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/VideoManager.h \
+ /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/QVector \
+ /usr/include/qt6/QtCore/qvector.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/VideoItem.h \
+ /usr/include/qt6/QtCore/QString /usr/include/qt6/QtGui/QPixmap \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.h \
+ /usr/include/qt6/QtCore/QProcess /usr/include/qt6/QtCore/qprocess.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.h \
+ /usr/include/qt6/QtCore/QStringList \
+ /home/senu/Documents/VCM/VirtualCamManager2/src/ThumbnailGenerator.h

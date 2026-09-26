@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/senu/Documents/VirtualCamManager
+CMAKE_SOURCE_DIR = /home/senu/Documents/VCM/VirtualCamManager2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/senu/Documents/VirtualCamManager/build
+CMAKE_BINARY_DIR = /home/senu/Documents/VCM/VirtualCamManager2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -85,11 +85,56 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/senu/Documents/VirtualCamManager/build/CMakeFiles /home/senu/Documents/VirtualCamManager/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles /home/senu/Documents/VCM/VirtualCamManager2/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/senu/Documents/VirtualCamManager/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -155,6 +200,30 @@ VirtualCamManager_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager_autogen.dir/build.make CMakeFiles/VirtualCamManager_autogen.dir/build
 .PHONY : VirtualCamManager_autogen/fast
 
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.o: VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o
+.PHONY : VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.o
+
+# target to build an object file
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o
+.PHONY : VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o
+
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.i: VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.i
+.PHONY : VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.i
+
+# target to preprocess a source file
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.i
+.PHONY : VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.i
+
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.s: VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.s
+.PHONY : VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.s
+
+# target to generate assembly for a file
+VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.s
+.PHONY : VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.s
+
 VirtualCamManager_autogen/mocs_compilation.o: VirtualCamManager_autogen/mocs_compilation.cpp.o
 .PHONY : VirtualCamManager_autogen/mocs_compilation.o
 
@@ -203,6 +272,30 @@ src/FFmpegProcess.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.s
 .PHONY : src/FFmpegProcess.cpp.s
 
+src/HardwareAcceleration.o: src/HardwareAcceleration.cpp.o
+.PHONY : src/HardwareAcceleration.o
+
+# target to build an object file
+src/HardwareAcceleration.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o
+.PHONY : src/HardwareAcceleration.cpp.o
+
+src/HardwareAcceleration.i: src/HardwareAcceleration.cpp.i
+.PHONY : src/HardwareAcceleration.i
+
+# target to preprocess a source file
+src/HardwareAcceleration.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.i
+.PHONY : src/HardwareAcceleration.cpp.i
+
+src/HardwareAcceleration.s: src/HardwareAcceleration.cpp.s
+.PHONY : src/HardwareAcceleration.s
+
+# target to generate assembly for a file
+src/HardwareAcceleration.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.s
+.PHONY : src/HardwareAcceleration.cpp.s
+
 src/MainWindow.o: src/MainWindow.cpp.o
 .PHONY : src/MainWindow.o
 
@@ -226,6 +319,30 @@ src/MainWindow.s: src/MainWindow.cpp.s
 src/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.s
 .PHONY : src/MainWindow.cpp.s
+
+src/ThumbnailGenerator.o: src/ThumbnailGenerator.cpp.o
+.PHONY : src/ThumbnailGenerator.o
+
+# target to build an object file
+src/ThumbnailGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o
+.PHONY : src/ThumbnailGenerator.cpp.o
+
+src/ThumbnailGenerator.i: src/ThumbnailGenerator.cpp.i
+.PHONY : src/ThumbnailGenerator.i
+
+# target to preprocess a source file
+src/ThumbnailGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.i
+.PHONY : src/ThumbnailGenerator.cpp.i
+
+src/ThumbnailGenerator.s: src/ThumbnailGenerator.cpp.s
+.PHONY : src/ThumbnailGenerator.s
+
+# target to generate assembly for a file
+src/ThumbnailGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.s
+.PHONY : src/ThumbnailGenerator.cpp.s
 
 src/VideoItem.o: src/VideoItem.cpp.o
 .PHONY : src/VideoItem.o
@@ -275,30 +392,6 @@ src/VideoManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.s
 .PHONY : src/VideoManager.cpp.s
 
-src/VirtualCameraManager.o: src/VirtualCameraManager.cpp.o
-.PHONY : src/VirtualCameraManager.o
-
-# target to build an object file
-src/VirtualCameraManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o
-.PHONY : src/VirtualCameraManager.cpp.o
-
-src/VirtualCameraManager.i: src/VirtualCameraManager.cpp.i
-.PHONY : src/VirtualCameraManager.i
-
-# target to preprocess a source file
-src/VirtualCameraManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.i
-.PHONY : src/VirtualCameraManager.cpp.i
-
-src/VirtualCameraManager.s: src/VirtualCameraManager.cpp.s
-.PHONY : src/VirtualCameraManager.s
-
-# target to generate assembly for a file
-src/VirtualCameraManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VirtualCamManager.dir/build.make CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.s
-.PHONY : src/VirtualCameraManager.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -330,28 +423,38 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... VirtualCamManager_autogen"
 	@echo "... VirtualCamManager_autogen_timestamp_deps"
 	@echo "... VirtualCamManager"
+	@echo "... VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.o"
+	@echo "... VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.i"
+	@echo "... VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.s"
 	@echo "... VirtualCamManager_autogen/mocs_compilation.o"
 	@echo "... VirtualCamManager_autogen/mocs_compilation.i"
 	@echo "... VirtualCamManager_autogen/mocs_compilation.s"
 	@echo "... src/FFmpegProcess.o"
 	@echo "... src/FFmpegProcess.i"
 	@echo "... src/FFmpegProcess.s"
+	@echo "... src/HardwareAcceleration.o"
+	@echo "... src/HardwareAcceleration.i"
+	@echo "... src/HardwareAcceleration.s"
 	@echo "... src/MainWindow.o"
 	@echo "... src/MainWindow.i"
 	@echo "... src/MainWindow.s"
+	@echo "... src/ThumbnailGenerator.o"
+	@echo "... src/ThumbnailGenerator.i"
+	@echo "... src/ThumbnailGenerator.s"
 	@echo "... src/VideoItem.o"
 	@echo "... src/VideoItem.i"
 	@echo "... src/VideoItem.s"
 	@echo "... src/VideoManager.o"
 	@echo "... src/VideoManager.i"
 	@echo "... src/VideoManager.s"
-	@echo "... src/VirtualCameraManager.o"
-	@echo "... src/VirtualCameraManager.i"
-	@echo "... src/VirtualCameraManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

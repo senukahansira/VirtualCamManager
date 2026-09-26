@@ -5,10 +5,12 @@ VirtualCamManager: \
   CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o \
   CMakeFiles/VirtualCamManager.dir/src/main.cpp.o \
   CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o \
-  CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o \
   CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o \
+  CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o \
   CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o \
-  CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o \
+  CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o \
+  CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o \
+  CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o \
   /usr/lib/libQt6Widgets.so.6.11.1 \
   /usr/lib/libQt6Gui.so.6.11.1 \
   /usr/lib/libGLX.so \
@@ -101,13 +103,17 @@ CMakeFiles/VirtualCamManager.dir/src/main.cpp.o:
 
 CMakeFiles/VirtualCamManager.dir/src/MainWindow.cpp.o:
 
-CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o:
-
 CMakeFiles/VirtualCamManager.dir/src/VideoItem.cpp.o:
+
+CMakeFiles/VirtualCamManager.dir/src/VideoManager.cpp.o:
 
 CMakeFiles/VirtualCamManager.dir/src/FFmpegProcess.cpp.o:
 
-CMakeFiles/VirtualCamManager.dir/src/VirtualCameraManager.cpp.o:
+CMakeFiles/VirtualCamManager.dir/src/ThumbnailGenerator.cpp.o:
+
+CMakeFiles/VirtualCamManager.dir/src/HardwareAcceleration.cpp.o:
+
+CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp.o:
 
 /usr/lib/libQt6Widgets.so.6.11.1:
 

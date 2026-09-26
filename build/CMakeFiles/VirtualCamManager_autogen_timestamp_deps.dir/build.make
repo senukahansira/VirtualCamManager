@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/senu/Documents/VirtualCamManager
+CMAKE_SOURCE_DIR = /home/senu/Documents/VCM/VirtualCamManager2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/senu/Documents/VirtualCamManager/build
+CMAKE_BINARY_DIR = /home/senu/Documents/VCM/VirtualCamManager2/build
 
 # Utility rule file for VirtualCamManager_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir/depend:
-	cd /home/senu/Documents/VirtualCamManager/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/senu/Documents/VirtualCamManager /home/senu/Documents/VirtualCamManager /home/senu/Documents/VirtualCamManager/build /home/senu/Documents/VirtualCamManager/build /home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" VirtualCamManager_autogen_timestamp_deps
+	cd /home/senu/Documents/VCM/VirtualCamManager2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/senu/Documents/VCM/VirtualCamManager2 /home/senu/Documents/VCM/VirtualCamManager2 /home/senu/Documents/VCM/VirtualCamManager2/build /home/senu/Documents/VCM/VirtualCamManager2/build /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" VirtualCamManager_autogen_timestamp_deps
 .PHONY : CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir/depend
 

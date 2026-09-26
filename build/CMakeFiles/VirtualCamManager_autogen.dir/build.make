@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/senu/Documents/VirtualCamManager
+CMAKE_SOURCE_DIR = /home/senu/Documents/VCM/VirtualCamManager2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/senu/Documents/VirtualCamManager/build
+CMAKE_BINARY_DIR = /home/senu/Documents/VCM/VirtualCamManager2/build
 
 # Utility rule file for VirtualCamManager_autogen.
 
@@ -71,9 +71,9 @@ CMakeFiles/VirtualCamManager_autogen: VirtualCamManager_autogen/timestamp
 VirtualCamManager_autogen/timestamp: /usr/lib/qt6/moc
 VirtualCamManager_autogen/timestamp: /usr/lib/qt6/uic
 VirtualCamManager_autogen/timestamp: CMakeFiles/VirtualCamManager_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/senu/Documents/VirtualCamManager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target VirtualCamManager"
-	/usr/bin/cmake -E cmake_autogen /home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen.dir/AutogenInfo.json ""
-	/usr/bin/cmake -E touch /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target VirtualCamManager"
+	/usr/bin/cmake -E cmake_autogen /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/timestamp
 
 CMakeFiles/VirtualCamManager_autogen.dir/codegen:
 .PHONY : CMakeFiles/VirtualCamManager_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/VirtualCamManager_autogen.dir/clean:
 .PHONY : CMakeFiles/VirtualCamManager_autogen.dir/clean
 
 CMakeFiles/VirtualCamManager_autogen.dir/depend:
-	cd /home/senu/Documents/VirtualCamManager/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/senu/Documents/VirtualCamManager /home/senu/Documents/VirtualCamManager /home/senu/Documents/VirtualCamManager/build /home/senu/Documents/VirtualCamManager/build /home/senu/Documents/VirtualCamManager/build/CMakeFiles/VirtualCamManager_autogen.dir/DependInfo.cmake "--color=$(COLOR)" VirtualCamManager_autogen
+	cd /home/senu/Documents/VCM/VirtualCamManager2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/senu/Documents/VCM/VirtualCamManager2 /home/senu/Documents/VCM/VirtualCamManager2 /home/senu/Documents/VCM/VirtualCamManager2/build /home/senu/Documents/VCM/VirtualCamManager2/build /home/senu/Documents/VCM/VirtualCamManager2/build/CMakeFiles/VirtualCamManager_autogen.dir/DependInfo.cmake "--color=$(COLOR)" VirtualCamManager_autogen
 .PHONY : CMakeFiles/VirtualCamManager_autogen.dir/depend
 

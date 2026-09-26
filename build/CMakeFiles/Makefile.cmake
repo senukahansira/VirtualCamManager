@@ -7,9 +7,10 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/senu/Documents/VirtualCamManager/CMakeLists.txt"
+  "/home/senu/Documents/VCM/VirtualCamManager2/CMakeLists.txt"
   "CMakeFiles/4.4.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.4.2/CMakeSystem.cmake"
+  "/home/senu/Documents/VCM/VirtualCamManager2/resources/resources.qrc"
   "/usr/lib/cmake/Qt6/FindWrapAtomic.cmake"
   "/usr/lib/cmake/Qt6/FindWrapOpenGL.cmake"
   "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
@@ -511,6 +512,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/4.4.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.4.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/VirtualCamManager_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/VirtualCamManager_autogen.dir/AutoRcc_resources_3YJK5W5UP7_Info.json"
   ".qt/QtDeploySupport.cmake"
   ".qt/QtDeployTargets.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"

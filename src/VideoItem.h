@@ -2,36 +2,29 @@
 #define VIDEOITEM_H
 
 #include <QString>
+#include <QPixmap>
 
-/*
- * VideoItem
- *
- * This is a very small data class.
- *
- * It represents ONE video in our application.
- *
- * Example:
- *
- *     Name: sandy.mp4
- *     Path: /home/user/Downloads/sandy.mp4
- */
 class VideoItem
 {
 public:
+    explicit VideoItem(const QString &filePath);
 
-    // Constructor.
-    VideoItem(const QString &path = QString());
+    QString filePath() const;
+    QString fileName() const;
 
-    // Return the complete file path.
-    QString path() const;
+    QString thumbnailPath() const;
+    QPixmap thumbnail() const;
+    void setThumbnail(const QPixmap &pixmap);
+    bool hasThumbnail() const;
 
-    // Return only the filename.
-    QString name() const;
+    qint64 durationMs() const;
+    void setDurationMs(qint64 duration);
 
 private:
-
-    // Complete path to the video file.
-    QString m_path;
+    QString m_filePath;
+    QString m_thumbnailPath;
+    QPixmap m_thumbnail;
+    qint64 m_durationMs;
 };
 
-#endif // VIDEOITEM_H
+#endif

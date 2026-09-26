@@ -42,10 +42,15 @@ template <> constexpr inline auto FFmpegProcess::qt_create_metaobjectdata<qt_met
         "started",
         "",
         "stopped",
+        "paused",
+        "resumed",
+        "positionChanged",
+        "positionMs",
+        "durationChanged",
+        "durationMs",
         "errorOccurred",
         "message",
-        "outputReceived",
-        "output"
+        "logMessage"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -53,13 +58,25 @@ template <> constexpr inline auto FFmpegProcess::qt_create_metaobjectdata<qt_met
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'stopped'
         QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'errorOccurred'
-        QtMocHelpers::SignalData<void(const QString &)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 5 },
+        // Signal 'paused'
+        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'resumed'
+        QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'positionChanged'
+        QtMocHelpers::SignalData<void(qint64)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::LongLong, 7 },
         }}),
-        // Signal 'outputReceived'
-        QtMocHelpers::SignalData<void(const QString &)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 7 },
+        // Signal 'durationChanged'
+        QtMocHelpers::SignalData<void(qint64)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::LongLong, 9 },
+        }}),
+        // Signal 'errorOccurred'
+        QtMocHelpers::SignalData<void(const QString &)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 11 },
+        }}),
+        // Signal 'logMessage'
+        QtMocHelpers::SignalData<void(const QString &)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 11 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -86,8 +103,12 @@ void FFmpegProcess::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         switch (_id) {
         case 0: _t->started(); break;
         case 1: _t->stopped(); break;
-        case 2: _t->errorOccurred((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 3: _t->outputReceived((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 2: _t->paused(); break;
+        case 3: _t->resumed(); break;
+        case 4: _t->positionChanged((*reinterpret_cast<std::add_pointer_t<qint64>>(_a[1]))); break;
+        case 5: _t->durationChanged((*reinterpret_cast<std::add_pointer_t<qint64>>(_a[1]))); break;
+        case 6: _t->errorOccurred((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 7: _t->logMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -96,9 +117,17 @@ void FFmpegProcess::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
             return;
         if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)()>(_a, &FFmpegProcess::stopped, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(const QString & )>(_a, &FFmpegProcess::errorOccurred, 2))
+        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)()>(_a, &FFmpegProcess::paused, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(const QString & )>(_a, &FFmpegProcess::outputReceived, 3))
+        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)()>(_a, &FFmpegProcess::resumed, 3))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(qint64 )>(_a, &FFmpegProcess::positionChanged, 4))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(qint64 )>(_a, &FFmpegProcess::durationChanged, 5))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(const QString & )>(_a, &FFmpegProcess::errorOccurred, 6))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (FFmpegProcess::*)(const QString & )>(_a, &FFmpegProcess::logMessage, 7))
             return;
     }
 }
@@ -122,14 +151,14 @@ int FFmpegProcess::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 8;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 8;
     }
     return _id;
 }
@@ -147,14 +176,38 @@ void FFmpegProcess::stopped()
 }
 
 // SIGNAL 2
-void FFmpegProcess::errorOccurred(const QString & _t1)
+void FFmpegProcess::paused()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 
 // SIGNAL 3
-void FFmpegProcess::outputReceived(const QString & _t1)
+void FFmpegProcess::resumed()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
+}
+
+// SIGNAL 4
+void FFmpegProcess::positionChanged(qint64 _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 4, nullptr, _t1);
+}
+
+// SIGNAL 5
+void FFmpegProcess::durationChanged(qint64 _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1);
+}
+
+// SIGNAL 6
+void FFmpegProcess::errorOccurred(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1);
+}
+
+// SIGNAL 7
+void FFmpegProcess::logMessage(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1);
 }
 QT_WARNING_POP

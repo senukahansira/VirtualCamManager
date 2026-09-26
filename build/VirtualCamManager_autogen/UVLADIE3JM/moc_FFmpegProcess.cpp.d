@@ -1,5 +1,6 @@
-/home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_FFmpegProcess.cpp: /home/senu/Documents/VirtualCamManager/src/FFmpegProcess.h \
-  /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/moc_predefs.h \
+/home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/moc_FFmpegProcess.cpp: /home/senu/Documents/VCM/VirtualCamManager2/src/FFmpegProcess.h \
+  /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/moc_predefs.h \
+  /home/senu/Documents/VCM/VirtualCamManager2/src/HardwareAcceleration.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -260,6 +261,7 @@
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QProcess \
   /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QStringList \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20bit.h \
   /usr/include/qt6/QtCore/q20functional.h \

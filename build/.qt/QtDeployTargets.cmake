@@ -1,2 +1,2 @@
-set(__QT_DEPLOY_TARGET_VirtualCamManager_FILE /home/senu/Documents/VirtualCamManager/build/VirtualCamManager)
+set(__QT_DEPLOY_TARGET_VirtualCamManager_FILE /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager)
 set(__QT_DEPLOY_TARGET_VirtualCamManager_TYPE EXECUTABLE)

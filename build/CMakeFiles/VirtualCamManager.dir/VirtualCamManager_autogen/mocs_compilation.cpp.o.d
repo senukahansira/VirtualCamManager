@@ -1,8 +1,8 @@
 CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.o: \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/mocs_compilation.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_FFmpegProcess.cpp \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/FFmpegProcess.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/moc_FFmpegProcess.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/FFmpegProcess.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/qobjectdefs.h \
  /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qglobal.h \
@@ -287,12 +287,14 @@ CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.
  /usr/include/qt6/QtCore/qprocess.h /usr/include/qt6/QtCore/qiodevice.h \
  /usr/include/qt6/QtCore/qspan.h /usr/include/c++/16/cassert \
  /usr/include/qt6/QtCore/q20iterator.h \
- /usr/include/qt6/QtCore/qshareddata.h /usr/include/qt6/QtCore/QString \
+ /usr/include/qt6/QtCore/qshareddata.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/HardwareAcceleration.h \
+ /usr/include/qt6/QtCore/QString /usr/include/qt6/QtCore/QStringList \
  /usr/include/qt6/QtCore/qtmochelpers.h \
  /usr/include/qt6/QtCore/qtmocconstants.h \
  /usr/include/qt6/QtCore/q20algorithm.h \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_MainWindow.cpp \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/MainWindow.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/moc_MainWindow.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/MainWindow.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/qmainwindow.h \
  /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -340,10 +342,45 @@ CMakeFiles/VirtualCamManager.dir/VirtualCamManager_autogen/mocs_compilation.cpp.
  /usr/include/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/qt6/QtGui/qcursor.h /usr/include/qt6/QtGui/qbitmap.h \
  /usr/include/qt6/QtWidgets/qtabwidget.h \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_VideoManager.cpp \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoManager.h \
+ /usr/include/qt6/QtWidgets/QVBoxLayout \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtWidgets/qlayout.h \
+ /usr/include/qt6/QtWidgets/qlayoutitem.h \
+ /usr/include/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/qt6/QtWidgets/QHBoxLayout /usr/include/qt6/QtWidgets/QLabel \
+ /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtWidgets/qframe.h \
+ /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtGui/qtextdocument.h \
+ /usr/include/qt6/QtCore/qurl.h /usr/include/qt6/QtWidgets/QPushButton \
+ /usr/include/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/qt6/QtWidgets/QScrollArea \
+ /usr/include/qt6/QtWidgets/qscrollarea.h \
+ /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt6/QtWidgets/QSlider /usr/include/qt6/QtWidgets/qslider.h \
+ /usr/include/qt6/QtWidgets/qabstractslider.h \
+ /usr/include/qt6/QtWidgets/QComboBox \
+ /usr/include/qt6/QtWidgets/qcombobox.h \
+ /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt6/QtWidgets/qstyleoption.h \
+ /usr/include/qt6/QtCore/qlocale.h \
+ /usr/include/qt6/QtWidgets/qabstractspinbox.h \
+ /usr/include/qt6/QtGui/qvalidator.h \
+ /usr/include/qt6/QtCore/qregularexpression.h \
+ /usr/include/qt6/QtWidgets/qstyle.h /usr/include/qt6/QtWidgets/qtabbar.h \
+ /usr/include/qt6/QtWidgets/qrubberband.h \
+ /usr/include/qt6/QtCore/qabstractitemmodel.h \
+ /usr/include/qt6/QtWidgets/QCheckBox \
+ /usr/include/qt6/QtWidgets/qcheckbox.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoManager.h \
  /usr/include/qt6/QtCore/QVector /usr/include/qt6/QtCore/qvector.h \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoItem.h \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/FFmpegProcess.h \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/moc_VirtualCameraManager.cpp \
- /home/senu/Documents/VirtualCamManager/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VirtualCameraManager.h
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoItem.h \
+ /usr/include/qt6/QtGui/QPixmap \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/FFmpegProcess.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/ThumbnailGenerator.h \
+ /usr/include/qt6/QtGui/qtextcursor.h \
+ /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
+ /usr/include/qt6/QtGui/qtextoption.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/moc_ThumbnailGenerator.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/ThumbnailGenerator.h \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/moc_VideoManager.cpp \
+ /home/senu/Documents/VCM/VirtualCamManager2/build/VirtualCamManager_autogen/UVLADIE3JM/../../../src/VideoManager.h
