@@ -216,7 +216,8 @@ Virtual Camera Manager 2.1.0
 
 ## 🖼️ Screenshot
 
-<img width="1166" height="681" alt="Virtual Camera Manager" src="https://github.com/user-attachments/assets/276ef1ce-0ba9-46f4-a376-c5cabdc93c85" />
+<img width="1919" height="1079" alt="2026-09-27_06-05" src="https://github.com/user-attachments/assets/6a8e4c20-e9c8-458b-b161-6c7de0ed648d" />
+
 
 ## ⚠️ Notes
 
