@@ -1,4 +1,4 @@
-# Virtual Camera Manager V2.0
+# Virtual Camera Manager V2.1.0
 
 <p align="center">
   <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=c%2B%2B" alt="C++" />
@@ -115,16 +115,22 @@ Add a video, then use the controls in the application to play or stop it.
 
 You can test the virtual camera and FFmpeg pipeline independently of the GUI:
 
+## FFmpeg test
+
+Before using the GUI:
+
 ```bash
-ffmpeg -nostdin \
+ffmpeg \
+    -nostdin \
     -re \
     -stream_loop -1 \
-    -i ll.mp4 \
+    -i video.mp4 \
     -vf scale=1280:720,format=yuv420p \
     -pix_fmt yuv420p \
     -f v4l2 \
     /dev/video10
 ```
+
 
 Replace `ll.mp4` with the path to a video file. If this command successfully writes to `/dev/video10`, the GUI should be able to use the same pipeline.
 
@@ -161,6 +167,52 @@ ffmpeg -nostdin -re -stream_loop -1 \
     -f v4l2 \
     /dev/video10
 ```
+
+## Hardware acceleration
+
+The GUI offers:
+
+- Auto
+- Software
+- VAAPI
+- CUDA
+- QSV
+- VDPAU
+
+Auto checks:
+
+```bash
+ffmpeg -hide_banner -hwaccels
+```
+
+Hardware API availability does not guarantee that every codec/GPU/driver combination will work. If hardware decoding fails, choose Software.
+
+## Thumbnail cache
+
+Thumbnails are stored in:
+
+```text
+~/.cache/VirtualCamManager/
+```
+
+## Output
+
+```text
+1280x720
+YUV420P
+V4L2
+/dev/video10
+```
+
+## Note about pause/seek
+
+This V2 implementation pauses by remembering the current timestamp and stopping FFmpeg. Resume starts FFmpeg from the saved timestamp.
+
+Seeking similarly restarts FFmpeg from the requested timestamp. This is simple and reliable for the initial version, but V2.1 can replace this with a persistent media pipeline for smoother seeking and lower restart latency.
+
+## Version
+
+Virtual Camera Manager 2.1.0
 
 ## 🖼️ Screenshot
 
