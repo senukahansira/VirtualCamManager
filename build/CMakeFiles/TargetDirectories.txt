@@ -1,0 +1,9 @@
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/VirtualCamManager.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/edit_cache.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/rebuild_cache.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/list_install_components.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/install.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/install/local.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/install/strip.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/VirtualCamManager_autogen_timestamp_deps.dir
+/home/senu/Documents/VCM/VirtualCamManager2/2.1.0/build/CMakeFiles/VirtualCamManager_autogen.dir

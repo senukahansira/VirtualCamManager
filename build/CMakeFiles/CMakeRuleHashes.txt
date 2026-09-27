@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+a9ecf9ae598a73842e48e882b1f23c92 CMakeFiles/VirtualCamManager_autogen
+3d85ae90362835f593789bdd8c6e81bf VirtualCamManager_autogen/3YJK5W5UP7/qrc_resources.cpp
+932f943231af1a48d0313f2fc88e2bd2 VirtualCamManager_autogen/timestamp
