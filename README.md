@@ -54,7 +54,9 @@ The application provides a Qt 6 graphical interface for adding videos, selecting
 
 ## 🛠️ Requirements
 
-The application currently targets Ubuntu/Debian-based Linux distributions.
+The application currently targets Ubuntu/Debian-based Linux distributions, but it also works on Arch-based systems with the required packages installed.
+
+### Debian/Ubuntu
 
 Install the required packages:
 
@@ -67,6 +69,27 @@ Install v4l2loopback:
 
 ```bash
 sudo apt install v4l2loopback-dkms v4l2loopback-utils
+```
+
+### Arch Linux / Manjaro
+
+Install the required packages:
+
+```bash
+sudo pacman -Syu
+sudo pacman -S base-devel cmake qt6-base ffmpeg linux-headers
+```
+
+Install v4l2loopback:
+
+```bash
+sudo pacman -S v4l2loopback-dkms
+```
+
+If the `v4l2loopback-dkms` package is unavailable in your mirror, try the non-DKMS package:
+
+```bash
+sudo pacman -S v4l2loopback
 ```
 
 ## 📷 Create the virtual camera
@@ -90,11 +113,32 @@ v4l2-ctl --list-devices
 
 > The application does not currently load the v4l2loopback kernel module automatically. The module must be loaded before running the application.
 
+### Make the module load automatically on Arch
+
+```bash
+echo "v4l2loopback" | sudo tee /etc/modules-load.d/v4l2loopback.conf
+```
+
+This will load the module automatically at boot.
+
 ## 🔨 Build
 
 From the repository directory:
 
 ```bash
+mkdir -p build
+cd build
+cmake ..
+make -j$(nproc)
+```
+
+### Build on Arch
+
+The build process is the same on Arch:
+
+```bash
+git clone https://github.com/senukahansira/VirtualCamManager.git
+cd VirtualCamManager
 mkdir -p build
 cd build
 cmake ..
@@ -109,15 +153,26 @@ From the build directory:
 ./VirtualCamManager
 ```
 
-Add a video, then use the controls in the application to play or stop it.
+Or from the repository root with the executable built in `build`:
+
+```bash
+./build/VirtualCamManager
+```
+
+### Run on Arch Linux
+
+After installing dependencies and loading the module:
+
+```bash
+sudo modprobe v4l2loopback devices=1 video_nr=10 card_label="VirtualCam" exclusive_caps=1
+./build/VirtualCamManager
+```
+
+Then add a video in the GUI and press **Play** to send it to `/dev/video10`.
 
 ## 🧪 Test FFmpeg manually
 
 You can test the virtual camera and FFmpeg pipeline independently of the GUI:
-
-## FFmpeg test
-
-Before using the GUI:
 
 ```bash
 ffmpeg \
@@ -131,8 +186,7 @@ ffmpeg \
     /dev/video10
 ```
 
-
-Replace `ll.mp4` with the path to a video file. If this command successfully writes to `/dev/video10`, the GUI should be able to use the same pipeline.
+Replace `video.mp4` with the path to a video file. If this command successfully writes to `/dev/video10`, the GUI should be able to use the same pipeline.
 
 ## 🧱 Main components
 
@@ -208,7 +262,7 @@ V4L2
 
 This V2 implementation pauses by remembering the current timestamp and stopping FFmpeg. Resume starts FFmpeg from the saved timestamp.
 
-Seeking similarly restarts FFmpeg from the requested timestamp. This is simple and reliable for the initial version, but V2.1 can replace this with a persistent media pipeline for smoother seeking and lower restart latency.
+Seeking similarly restarts FFmpeg from the requested timestamp. This is simple and reliable for the initial version, but V2.1 can replace this with a persistent media pipeline for smoother seeking.
 
 ## Version
 
@@ -218,13 +272,13 @@ Virtual Camera Manager 2.1.0
 
 <img width="1919" height="1079" alt="2026-09-27_06-05" src="https://github.com/user-attachments/assets/6a8e4c20-e9c8-458b-b161-6c7de0ed648d" />
 
-
 ## ⚠️ Notes
 
 - The default virtual camera device is `/dev/video10`.
 - Only one video can be output to the virtual camera at a time.
 - The v4l2loopback module must be loaded before launching the application.
 - FFmpeg must be installed and available in the system `PATH`.
+- On Arch, install `linux-headers` and `v4l2loopback-dkms` if you see module or build issues.
 
 ## Author
 
